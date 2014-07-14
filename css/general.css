@@ -1,0 +1,134 @@
+/* 
+    Document   : general
+    Created on : 30-06-2014, 10:50:59 AM
+    Author     : Sebastian Franco Brantes
+    Description:
+        Css general de todo el sistema.
+*/
+
+body > .container {
+  padding: 70px 15px 0;
+}
+
+#jumbotron{
+    padding-top: 100px;
+    padding-bottom: 0px;
+    min-height: 500px;
+    background-image: url('../images/jumbotron.jpg');
+}
+
+#menu{
+    min-height: 55px; 
+}
+            
+#manoCelular{
+    display:none;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+
+.item{
+    margin-bottom: 10px;
+}
+    
+.productoNombbre{
+    text-align: center;
+    margin-bottom: 0px;
+    height: 50px;
+}
+    
+.precio{
+    color:#428bca;
+    font-weight: bold;
+    text-align: right;
+}
+
+.precioLeft{
+    color:#428bca;
+    font-weight: bold;
+    text-align: left;
+}
+    
+@media (max-width: 767px) {
+    .productoNombbre{
+        font-size: 10px;
+    }
+}
+
+.stock{
+    text-align: left;
+    float: left;
+    color:#428bca;
+}
+
+#caracteristicas>p{
+    margin: 0px;
+}
+
+@media (max-width: 767px) {
+  .agregarCarro-form{
+        margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+   .agregarCarro-form{
+        margin-top: 95px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .agregarCarro-form{
+        margin-top: 120px;
+    }
+}
+
+@media (min-width: 1200px) {
+  .agregarCarro-form{
+        margin-top: 120px;
+    }
+}
+
+
