@@ -18,6 +18,7 @@
 class Usuario extends CActiveRecord
 {
 	public static $generos=array('H'=>'Hombre','M'=>'Mujer');
+        
 	public function tableName()
 	{
 		return 'usuario';
