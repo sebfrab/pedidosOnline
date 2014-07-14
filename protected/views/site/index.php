@@ -51,8 +51,8 @@
         <h1 style="text-align: center; margin-bottom: 50px;">CONTACTO</h1>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <h1>¿Algún problema?</h1>
-            <p>¿no puedes acceder? ¿no recuerdas no clave y/o usuario?
-                escrbenos y veremos cuál es el problema
+            <p>¿no puedes acceder? ¿no recuerdas tu clave y/o usuario?
+                escríbenos y veremos cuál es el problema
             </p>
                     
             <h1>¿Eres social?</h1>
