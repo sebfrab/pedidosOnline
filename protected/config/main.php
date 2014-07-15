@@ -30,6 +30,9 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
+                'importcsv'=>array(
+                    'path'=>'upload/importcsv/', // path to folder for saving csv file and file with import params
+                ),
 		
 	),
 

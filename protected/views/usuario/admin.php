@@ -2,6 +2,7 @@
 
 $this->menu=array(
 	array('label'=>'Nuevo Usuario', 'url'=>array('create')),
+        array('label'=>'Crear perfiles nuevos Usuarios', 'url'=>'#', 'linkOptions'=>array('submit'=>array('createPermissionsNewUsuario'),'confirm'=>'¿Está seguro de crear los permisos de los nuevos usuarios?')),
 );
 ?>
 

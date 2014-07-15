@@ -152,6 +152,7 @@ class Usuario extends CActiveRecord
                     $auth->assign('mantenedor_producto', $this->idusuario);
                     $auth->assign('mantenedor_pedidos', $this->idusuario);
                     $auth->assign('mantenedor_detalle_pedido', $this->idusuario);
+                    $auth->assign('import_csv', $this->idusuario);
                     break;
                 case 2:
                     $auth->assign('pedidos', $this->idusuario);
@@ -200,4 +201,35 @@ class Usuario extends CActiveRecord
             return CHtml::listData(Usuario::model()->findAll(),'idusuario','nombreCompleto');
         }
         
+        public static function createPermissionsNewUsuario() {
+            $usuario = Usuario::model()->findAll();
+            foreach ($usuario as $usu) {
+                $auth = Yii::app()->authManager;
+                $items = $auth->getTasks($usu->idusuario);
+                    if(!$items){
+                        switch ($usu->tipo_usuario_idtipo_usuario) {
+                            case 1:
+                                $auth->assign('mantenedor_usuario', $usu->idusuario);
+                                $auth->assign('mantenedor_producto', $usu->idusuario);
+                                $auth->assign('mantenedor_pedidos', $usu->idusuario);
+                                $auth->assign('mantenedor_detalle_pedido', $usu->idusuario);
+                                $auth->assign('import_csv', $this->idusuario);
+                                break;
+                            case 2:
+                                $auth->assign('pedidos', $usu->idusuario);
+                                break;
+                            case 3:
+                                $auth->assign('lista_productos', $usu->idusuario);
+                                $auth->assign('carro', $usu->idusuario);
+                                $auth->assign('pedidos', $usu->idusuario);
+                                break;
+                            case 4:
+                                $auth->assign('lista_productos', $usu->idusuario);
+                                $auth->assign('carro', $usu->idusuario);
+                                $auth->assign('pedidos', $usu->idusuario);
+                                break;
+                    }
+                }  
+            }
+        }
 }

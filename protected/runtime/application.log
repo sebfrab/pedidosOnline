@@ -10267,3 +10267,48 @@ Stack trace:
 REQUEST_URI=/pedidosOnline/producto/create
 HTTP_REFERER=http://localhost/pedidosOnline/producto/create
 ---
+2014/07/15 12:26:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "upload/importCsv"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('upload/importCs...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/upload/importCsv
+---
+2014/07/15 12:29:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "importCsv"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('importCsv')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/importCsv/
+---
+2014/07/15 12:31:41 [error] [php] move_uploaded_file(upload/importcsv/prueba.csv) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\pedidosOnline\protected\modules\importcsv\controllers\DefaultController.php:315)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(286): DefaultController->runAction()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): DefaultController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/importcsv/default/upload
+in C:\xampp\htdocs\pedidosOnline\protected\modules\importcsv\controllers\DefaultController.php (315)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/15 17:54:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('resetPermission...')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/resetPe...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pedidosOnline/usuario/resetPermissionsNewUsuario
+HTTP_REFERER=http://localhost/pedidosOnline/usuario/admin
+---

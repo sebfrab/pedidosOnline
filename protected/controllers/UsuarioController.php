@@ -28,7 +28,7 @@ class UsuarioController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','index','view','assign'),
+				'actions'=>array('create','update','admin','delete','index','view','assign','createPermissionsNewUsuario'),
 				'expression'=>'Yii::app()->user->checkAccess("mantenedor_usuario")',
 			),
 			array('deny',  // deny all users
@@ -181,6 +181,12 @@ class UsuarioController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+        
+        public function actionCreatePermissionsNewUsuario()
+	{
+            Usuario::model()->createPermissionsNewUsuario();
+            $this->redirect(array('admin'));
 	}
         
         public function actionAssign($id){
