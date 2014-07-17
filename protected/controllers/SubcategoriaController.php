@@ -29,7 +29,7 @@ class SubcategoriaController extends Controller
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','admin','delete','index','view'),
-				'users'=>array('@'),
+				'expression'=>'Yii::app()->user->checkAccess("mantenedor_subcategorias")',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -56,18 +56,30 @@ class SubcategoriaController extends Controller
 	{
 		$model=new Subcategoria;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Subcategoria']))
+		$this->performAjaxValidationSubmit($model);
+                
+                if(isset($_POST['Subcategoria']))
 		{
-			$model->attributes=$_POST['Subcategoria'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idsubcategoria));
+                        $model->attributes=$_POST['Subcategoria'];
+                        if(isset($_POST['ajax']) && $_POST['ajax']==='subcategoria-form')
+                        {  
+                            if($model->save()){ 
+                                echo CJSON::encode(array(
+                                    'insert' => true,
+                                    'redirectUrl' => Yii::app()->createUrl('subcategoria/'.$model->idsubcategoria)
+                                ));
+                                Yii::app()->end();
+                            } 
+                        }else{
+                            if($model->save()){
+                                $this->redirect(array('view','id'=>$model->idsubcategoria));
+                            }
+                        }   
 		}
-
+                
 		$this->render('create',array(
 			'model'=>$model,
+                        'url'=>'subcategoria/create',
 		));
 	}
 
@@ -80,18 +92,30 @@ class SubcategoriaController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Subcategoria']))
-		{
-			$model->attributes=$_POST['Subcategoria'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idsubcategoria));
-		}
+		$this->performAjaxValidationSubmit($model);
+                
+                if(isset($_POST['Subcategoria']))
+                {
+                    $model->attributes=$_POST['Subcategoria'];
+                    if(isset($_POST['ajax']) && $_POST['ajax']==='subcategoria-form')
+                    {  
+                        if($model->save()){ 
+                            echo CJSON::encode(array(
+                                'insert' => true,
+                                'redirectUrl' => Yii::app()->createUrl('subcategoria/'.$model->idsubcategoria)
+                            ));
+                            Yii::app()->end();
+                        } 
+                    }else{
+                        if($model->save()){
+                            $this->redirect(array('view','id'=>$model->idsubcategoria));
+                        }
+                    }   
+                }
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'url'=>'subcategoria/update/'.$id
 		));
 	}
 
@@ -137,10 +161,11 @@ class SubcategoriaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Subcategoria');
+		/*$dataProvider=new CActiveDataProvider('Subcategoria');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
+                $this->redirect(array('admin'));
 	}
 
 	/**
@@ -183,6 +208,19 @@ class SubcategoriaController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+        
+        protected function performAjaxValidationSubmit($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='subcategoria-form')
+		{
+			$errors = CActiveForm::validate($model);
+                        if ($errors != '[]')
+                        {
+                            echo $errors;
+                            Yii::app()->end();
+                        }
 		}
 	}
 }

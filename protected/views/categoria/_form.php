@@ -8,11 +8,41 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'categoria-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+        'enableClientValidation' => true,
+        'clientOptions' => array(
+            'validateOnSubmit' => true,
+            'afterValidate' => 'js:function(form, data, hasError) {
+                if (!hasError){
+                    str = $("#categoria-form").serialize() + "&ajax=categoria-form";
+                    $.ajax({
+                        type: "POST",
+                        url: "' . Yii::app()->createUrl($url) . '",
+                        data: str,
+                        dataType: "json",
+                        beforeSend : function() {
+                            $("#categoria-form").attr("disabled",true);
+                        },
+                        success: function(data, status) {
+                            if(data.insert)
+                            {
+                                window.location = data.redirectUrl;
+                            }
+                            else
+                            {
+                                $.each(data, function(key, value) {
+                                    var div = "#"+key+"_em_";
+                                    $(div).text(value);
+                                    $(div).show();
+                                });
+                                $("#categoria-form").attr("disabled",false);
+                            }
+                        },
+                    });
+                    return false;
+                }
+            }',
+        ),
 )); ?>
 
 

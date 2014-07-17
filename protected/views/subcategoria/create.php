@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Subcategoria', 'url'=>array('index')),
-	array('label'=>'Manage Subcategoria', 'url'=>array('admin')),
+	array('label'=>'Mantenedor Subcategoria', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Subcategoria</h1>
+<h1>Nueva Subcategoria</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'url'=>$url)); ?>

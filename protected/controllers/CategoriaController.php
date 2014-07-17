@@ -29,7 +29,7 @@ class CategoriaController extends Controller
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','admin','delete','index','view'),
-				'users'=>array('@'),
+				'expression'=>'Yii::app()->user->checkAccess("mantenedor_categorias")',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -56,18 +56,30 @@ class CategoriaController extends Controller
 	{
 		$model=new Categoria;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Categoria']))
+		$this->performAjaxValidationSubmit($model);
+                
+                if(isset($_POST['Categoria']))
 		{
-			$model->attributes=$_POST['Categoria'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idcategoria));
+                        $model->attributes=$_POST['Categoria'];
+                        if(isset($_POST['ajax']) && $_POST['ajax']==='categoria-form')
+                        {  
+                            if($model->save()){ 
+                                echo CJSON::encode(array(
+                                    'insert' => true,
+                                    'redirectUrl' => Yii::app()->createUrl('categoria/'.$model->idcategoria)
+                                ));
+                                Yii::app()->end();
+                            } 
+                        }else{
+                            if($model->save()){
+                                $this->redirect(array('view','id'=>$model->idcategoria));
+                            }
+                        }   
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+                        'url'=>'categoria/create',
 		));
 	}
 
@@ -80,18 +92,30 @@ class CategoriaController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Categoria']))
-		{
-			$model->attributes=$_POST['Categoria'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idcategoria));
-		}
+		$this->performAjaxValidationSubmit($model);
+                
+                if(isset($_POST['Categoria']))
+                {
+                    $model->attributes=$_POST['Categoria'];
+                    if(isset($_POST['ajax']) && $_POST['ajax']==='categoria-form')
+                    {  
+                        if($model->save()){ 
+                            echo CJSON::encode(array(
+                                'insert' => true,
+                                'redirectUrl' => Yii::app()->createUrl('categoria/'.$model->idcategoria)
+                            ));
+                            Yii::app()->end();
+                        } 
+                    }else{
+                        if($model->save()){
+                            $this->redirect(array('view','id'=>$model->idcategoria));
+                        }
+                    }   
+                }
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'url'=>'categoria/update/'.$id
 		));
 	}
 
@@ -137,10 +161,11 @@ class CategoriaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Categoria');
+		/*$dataProvider=new CActiveDataProvider('Categoria');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
+                $this->redirect(array('admin'));
 	}
 
 	/**
@@ -183,6 +208,19 @@ class CategoriaController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+        
+        protected function performAjaxValidationSubmit($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='categoria-form')
+		{
+			$errors = CActiveForm::validate($model);
+                        if ($errors != '[]')
+                        {
+                            echo $errors;
+                            Yii::app()->end();
+                        }
 		}
 	}
 }

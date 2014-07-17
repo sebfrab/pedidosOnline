@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Categoria', 'url'=>array('index')),
-	array('label'=>'Create Categoria', 'url'=>array('create')),
-	array('label'=>'View Categoria', 'url'=>array('view', 'id'=>$model->idcategoria)),
-	array('label'=>'Manage Categoria', 'url'=>array('admin')),
+	array('label'=>'Nueva Categoria', 'url'=>array('create')),
+	array('label'=>'Ver Categoria', 'url'=>array('view', 'id'=>$model->idcategoria)),
+	array('label'=>'Mantenedor Categorias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Categoria <?php echo $model->idcategoria; ?></h1>
+<h1>Actualizar Categoria <?php echo $model->idcategoria; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'url'=>$url)); ?>

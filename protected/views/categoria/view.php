@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Categoria', 'url'=>array('index')),
-	array('label'=>'Create Categoria', 'url'=>array('create')),
-	array('label'=>'Update Categoria', 'url'=>array('update', 'id'=>$model->idcategoria)),
-	array('label'=>'Delete Categoria', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->idcategoria),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Categoria', 'url'=>array('admin')),
+	array('label'=>'Nueva Categoria', 'url'=>array('create')),
+	array('label'=>'Actualizar Categoria', 'url'=>array('update', 'id'=>$model->idcategoria)),
+	array('label'=>'Eliminar Categoria', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->idcategoria),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Mantenedor Categorias', 'url'=>array('admin')),
 );
 ?>
 

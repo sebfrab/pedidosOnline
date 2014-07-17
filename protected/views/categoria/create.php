@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Categoria', 'url'=>array('index')),
-	array('label'=>'Manage Categoria', 'url'=>array('admin')),
+	array('label'=>'Mantenedor Categorias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Categoria</h1>
+<h1>Nueva Categoria</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'url'=>$url)); ?>

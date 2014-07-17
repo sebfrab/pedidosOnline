@@ -97,7 +97,7 @@ class Categoria extends CActiveRecord
         }
         
         function beforeDelete(){
-            if( $this->producto !== array() )//by relationName I mean the name of the relation between the models
+            if( $this->subcategoria !== array() )
                 return false;
             return parent::beforeDelete();
         } 

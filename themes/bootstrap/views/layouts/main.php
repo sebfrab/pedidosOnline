@@ -22,6 +22,8 @@
 
     <?php
         $auth=Yii::app()->authManager;
+        //$task=$auth->createTask('mantenedor_categorias','acceso total al mantenedor de categorias');
+        //$task=$auth->createTask('mantenedor_subcategorias','acceso total al mantenedor de subcategorias');
         //$task=$auth->createTask('import_csv','importación de datos desde archivos .csv');
         //$task=$auth->createTask('mantenedor_detalle_pedido','acceso completo a los detalles del pedido');
         //$task=$auth->createTask('pedidos','acceso a los pedidos');
@@ -93,6 +95,8 @@
                                                         array('label'=>'Pedidos', 'url'=>array('/pedido'),'visible'=>$auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Detalle Pedidos', 'url'=>array('/detallePedido'),'visible'=>$auth->checkAccess('mantenedor_detalle_pedido',Yii::app()->user->id)),
                                                         array('label'=>'Import .csv', 'url'=>array('/importcsv'),'visible'=>$auth->checkAccess('import_csv',Yii::app()->user->id)),
+                                                        array('label'=>'Categoria', 'url'=>array('/categoria'),'visible'=>$auth->checkAccess('mantenedor_categorias',Yii::app()->user->id)),
+                                                        array('label'=>'Subcategoria', 'url'=>array('/subcategoria'),'visible'=>$auth->checkAccess('mantenedor_subcategorias',Yii::app()->user->id)),
                                                     ),                                                    
                                                     'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_productos',Yii::app()->user->id)),
                                                 array('label'=>'<span class="glyphicon glyphicon-cog"></span> Cuenta <b class="caret"></b>', 'url'=>'#', 

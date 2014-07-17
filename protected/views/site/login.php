@@ -8,9 +8,9 @@
 <div class="container">
     
     <div class="row">
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4 col-md-3 col-sm-2"></div>
 
-        <div  class="col-lg-4 form">
+        <div  class="col-lg-4 col-md-6 col-sm-8 form">
         <h1>Login</h1>
         <?php $form=$this->beginWidget('CActiveForm', array(
                 'id'=>'login-form',
@@ -45,6 +45,6 @@
         <?php $this->endWidget(); ?>
         </div>
         
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4 col-md-3 col-sm-2"></div>
  </div>
 </div>

@@ -8,22 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Subcategoria', 'url'=>array('index')),
-	array('label'=>'Create Subcategoria', 'url'=>array('create')),
+	array('label'=>'Nueva Subcategoria', 'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#subcategoria-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Mantenedor Subcategorias</h1>
@@ -46,7 +32,19 @@ $('.search-form form').submit(function(){
 	'id'=>'subcategoria-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+        'itemsCssClass' => 'table table-hover',
+        'pager' => array(
+            'header' => '',
+            'hiddenPageCssClass' => 'disabled',
+            'maxButtonCount' => 5,
+            'cssFile' => false,
+            'prevPageLabel' => '<i class="icon-chevron-left"><</i>',
+            'nextPageLabel' => '<i class="icon-chevron-right">></i>',
+            'firstPageLabel' => 'First',
+            'lastPageLabel' => 'Last',
+        ),
 	'columns'=>array(
+                'idsubcategoria',
 		'nombre',
                 array(
                 'name'=>'Categoria',

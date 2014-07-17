@@ -29,6 +29,7 @@ class Subcategoria extends CActiveRecord
 			array('categoria_idcategoria, nombre', 'required'),
 			array('categoria_idcategoria', 'length', 'max'=>10),
 			array('nombre', 'length', 'max'=>100),
+                        array('idsubcategoria', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idsubcategoria, categoria_idcategoria, nombre', 'safe', 'on'=>'search'),
@@ -99,7 +100,7 @@ class Subcategoria extends CActiveRecord
 	}
         
         function beforeDelete(){
-            if( $this->producto !== array() )//by relationName I mean the name of the relation between the models
+            if( $this->producto !== array() )
                 return false;
             return parent::beforeDelete();
         } 
