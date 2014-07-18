@@ -19,7 +19,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/esperando.jpg" alt="" class="img-responsive img-circle center-block" />
             <br/>
-            <p style="text-align: center">menos tiempo de espera por tu producto</p>
+            <p style="text-align: center">Menos tiempo de espera por tu producto</p>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/pasos.jpg" alt="" class="img-responsive img-circle center-block" />
@@ -29,7 +29,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/tiempo.jpg" alt="" class="img-responsive img-circle center-block" />
             <br/>
-            <p style="text-align: center">más tiempo para ti, menos tiempo de ocio</p>
+            <p style="text-align: center">Más tiempo para ti, menos tiempo de ocio</p>
         </div>
     </div>
 </div>
@@ -46,7 +46,7 @@
 </div>
 
 
-<div style="margin-top:30px;" class="container">
+<div class="container">
     <div class="row">
         <h1 style="text-align: center; margin-bottom: 50px;">CONTACTO</h1>
         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -64,9 +64,12 @@
         <div class="col-lg-6 col-md-6 col-sm-6">
         
         <h1>Tus datos</h1>
+        
         <?php if(Yii::app()->user->hasFlash('contact')): ?>
-            <div class="flash-success">
-                <?php echo Yii::app()->user->getFlash('contact'); ?>
+            <div id="statusMsg">
+                <div class="success">
+                    <?php echo Yii::app()->user->getFlash('contact'); ?>
+                </div>
             </div>
         <?php else: ?>
 

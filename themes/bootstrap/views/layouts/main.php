@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut Icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/iconos/pedidosOnline.ico"/>
         <meta name="language" content="es" />
         <meta name="author" content="Sebastian Franco Brantes UTFSM - ¿y por qué no? - seb.frab@gmail.com"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -90,13 +91,13 @@
                                                         'data-toggle'=>'dropdown',
                                                     ),
                                                     'items'=>array(
-                                                        array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
-                                                        array('label'=>'Producto', 'url'=>array('/producto'),'visible'=>$auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
-                                                        array('label'=>'Pedidos', 'url'=>array('/pedido'),'visible'=>$auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id)),
+                                                        array('label'=>'Categoria', 'url'=>array('/categoria'),'visible'=>$auth->checkAccess('mantenedor_categorias',Yii::app()->user->id)),
                                                         array('label'=>'Detalle Pedidos', 'url'=>array('/detallePedido'),'visible'=>$auth->checkAccess('mantenedor_detalle_pedido',Yii::app()->user->id)),
                                                         array('label'=>'Import .csv', 'url'=>array('/importcsv'),'visible'=>$auth->checkAccess('import_csv',Yii::app()->user->id)),
-                                                        array('label'=>'Categoria', 'url'=>array('/categoria'),'visible'=>$auth->checkAccess('mantenedor_categorias',Yii::app()->user->id)),
+                                                        array('label'=>'Pedidos', 'url'=>array('/pedido'),'visible'=>$auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id)),
+                                                        array('label'=>'Producto', 'url'=>array('/producto'),'visible'=>$auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
                                                         array('label'=>'Subcategoria', 'url'=>array('/subcategoria'),'visible'=>$auth->checkAccess('mantenedor_subcategorias',Yii::app()->user->id)),
+                                                        array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
                                                     ),                                                    
                                                     'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_productos',Yii::app()->user->id)),
                                                 array('label'=>'<span class="glyphicon glyphicon-cog"></span> Cuenta <b class="caret"></b>', 'url'=>'#', 

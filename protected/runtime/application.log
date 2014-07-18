@@ -10567,3 +10567,63 @@ Stack trace:
 REQUEST_URI=/pedidosOnline/subcategoria/create
 HTTP_REFERER=http://localhost/pedidosOnline/subcategoria/create
 ---
+2014/07/18 11:43:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/pedidosOnline.ico"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pedidosO...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/pedidosOnline.ico
+---
+2014/07/18 11:43:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/pedidosOnline.ico"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pedidosO...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/pedidosOnline.ico
+---
+2014/07/18 11:45:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/pedidosOnline2.ico"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pedidosO...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/pedidosOnline2.ico
+---
+2014/07/18 11:45:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/pedidosOnline2.ico"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pedidosO...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/pedidosOnline2.ico
+---
+2014/07/18 11:54:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/icono-web.ico"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/icono-we...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/icono-web.ico
+---
+2014/07/18 11:54:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/icono-web.ico"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/icono-we...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/icono-web.ico
+---
+2014/07/18 11:58:16 [error] [php] mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() (C:\xampp\htdocs\pedidosOnline\protected\controllers\SiteController.php:44)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
