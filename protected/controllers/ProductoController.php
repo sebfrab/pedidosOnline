@@ -123,6 +123,20 @@ class ProductoController extends Controller
                 if(isset($_POST['Producto']))
 		{
                         $model->attributes=$_POST['Producto'];
+                        
+                        ////////////////////////////////////////////////////////////////////
+                        $path_picture = "images/productos/";
+                        $rnd = rand(0,9999);
+                        $rnd = "pedidosOnline".$rnd;
+                        $uploadedFile=CUploadedFile::getInstance($model,'img');
+                        $fileName = "{$rnd}-{$uploadedFile}";
+
+                        if(!empty($uploadedFile)){
+                            $uploadedFile->saveAs($path_picture.$fileName);
+                            $model->img= $fileName;
+                        }
+                        ////////////////////////////////////////////////////////////////////
+                        
                         if(isset($_POST['ajax']) && $_POST['ajax']==='producto-form')
                         {  
                             if($model->save()){ 
@@ -159,6 +173,21 @@ class ProductoController extends Controller
                 if(isset($_POST['Producto']))
                 {
                     $model->attributes=$_POST['Producto'];
+                    
+                    ////////////////////////////////////////////////////////////////////
+                    $path_picture = "images/productos/";
+                    $rnd = rand(0,9999);
+                    $rnd = "pedidosOnline".$rnd;
+                    $uploadedFile=CUploadedFile::getInstance($model,'img');
+                    $fileName = "{$rnd}-{$uploadedFile}";
+
+                    if(!empty($uploadedFile)){
+                        $uploadedFile->saveAs($path_picture.$fileName);
+                        $model->img= $fileName;
+                    }
+                    ////////////////////////////////////////////////////////////////////
+                    
+                    
                     if(isset($_POST['ajax']) && $_POST['ajax']==='producto-form')
                     {  
                         if($model->save()){ 

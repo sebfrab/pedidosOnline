@@ -7,13 +7,10 @@ class SFListProductos extends CWidget{
         parent::init();
         foreach($this->model as $item){
             echo "<div class=\"col-lg-3 col-md-3 col-sm-4 col-xs-12 item\">";
-            $url = Yii::app()->createUrl("/producto/$item->idproducto");;
+            $url = Yii::app()->createUrl("/producto/$item->idproducto");
             echo "<a href=\"$url\">";
             
-            $urlImage = Yii::app()->request->baseUrl."/images/productos/$item->idproducto/1.jpg";
-            if (!file_exists($urlImage)){
-                $urlImage = Yii::app()->request->baseUrl."/images/image-not-found.jpg";
-            }
+            $urlImage = $item->imagen();
             
             echo "<div class=\"thumbnail\"><img src=\"$urlImage\"  alt=\"$item->nombre\"></div>";
             $talla = '';

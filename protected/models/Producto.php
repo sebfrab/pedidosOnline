@@ -13,6 +13,7 @@
  * @property string $talla
  * @property string $precio
  * @property string $cantidad
+ * @property string $img
  */
 class Producto extends CActiveRecord
 {
@@ -36,12 +37,12 @@ class Producto extends CActiveRecord
 			array('estado_idestado, subcategoria_idsubcategoria, talla, precio, cantidad', 'length', 'max'=>10),
 			array('nombre', 'length', 'max'=>150),
 			array('marca', 'length', 'max'=>50),
+			array('img', 'length', 'max'=>350),
 			array('descripcion', 'safe'),
                         array('idproducto', 'required'),
-                        array('precio, cantidad', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idproducto, estado_idestado, subcategoria_idsubcategoria, nombre, descripcion, marca, talla, precio, cantidad', 'safe', 'on'=>'search'),
+			array('idproducto, estado_idestado, subcategoria_idsubcategoria, nombre, descripcion, marca, talla, precio, cantidad, img', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +75,7 @@ class Producto extends CActiveRecord
 			'talla' => 'Talla',
 			'precio' => 'Precio',
 			'cantidad' => 'Cantidad',
+			'img' => 'Img',
 		);
 	}
 
@@ -142,5 +144,25 @@ class Producto extends CActiveRecord
             if( $this->detallePedido !== array() )
                 return false;
             return parent::beforeDelete();
+        }
+        
+        public function imagen(){
+            
+            if($this->img){
+                return Yii::app()->request->baseUrl."/images/productos/$this->img";
+            }else{
+                return Yii::app()->request->baseUrl."/images/image-not-found.jpg";
+            }
+            
+            
+            
+            
+            /*
+             * if (file_exists($urlImage)){
+                $urlImage = Yii::app()->request->baseUrl."/images/productos/$this->img";
+                
+            }
+             * 
+             */
         }
 }

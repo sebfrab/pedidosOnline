@@ -8,10 +8,7 @@ class SFListCarro extends CWidget{
         foreach($this->model as $item){
             $i++;
             echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
-            $urlImage = Yii::app()->request->baseUrl."/images/productos/$item->producto_idproducto/1.jpg";
-            if (!file_exists($urlImage)){
-                $urlImage = Yii::app()->request->baseUrl."/images/image-not-found.jpg";
-            }
+            $urlImage = $item->producto->imagen();
             $nombre_producto = $item->producto->nombre;
             echo "<div class=\"thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-12\"><img src=\"$urlImage\"  alt=\"$nombre_producto\"></div>";
             

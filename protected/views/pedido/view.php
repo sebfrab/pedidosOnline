@@ -72,11 +72,8 @@ if($auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id) || $tipoUsuario
 
 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <?php
-    foreach($detalle as $det){
-        $urlImage = Yii::app()->request->baseUrl."/images/productos/".$det->producto->idproducto."/1.jpg";
-        if (!file_exists($urlImage)){
-            $urlImage = Yii::app()->request->baseUrl."/images/image-not-found.jpg";
-        }
+    foreach($detalle as $det){        
+        $urlImage = $det->producto->imagen();
     ?>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="thumbnail col-lg-3 col-md-3 col-sm-6 col-xs-4"><img src="<?php echo $urlImage;?>"  alt="<?php echo $det->producto->nombre; ?>"></div>

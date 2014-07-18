@@ -10783,3 +10783,580 @@ Stack trace:
 REQUEST_URI=/pedidosOnline/usuario/update/1
 HTTP_REFERER=http://localhost/pedidosOnline/usuario/update/1
 ---
+2014/07/18 15:57:00 [error] [exception.CException] exception 'CException' with message 'La propiedad "Producto"."img" no se encuentra definida.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('img')
+#1 C:\xampp\htdocs\pedidosOnline\protected\views\producto\_form.php(106): CActiveRecord->__get('img')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\pedidosOnline\protected\views\producto\update.php(20): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php(181): CController->render('update', Array)
+#11 [internal function]: ProductoController->actionUpdate('3')
+#12 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductoController), Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductoController), Object(ReflectionMethod), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/update')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/pedidosOnline/producto/update/3
+HTTP_REFERER=http://localhost/pedidosOnline/producto
+---
+2014/07/18 16:19:43 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (300)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (157)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:19:43 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:20:25 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (300)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (157)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:20:25 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:22:48 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (300)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (157)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:22:48 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:25:09 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (300)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (157)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:25:09 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:27:15 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (300)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (157)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:27:15 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:27:47 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (300)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (157)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:27:47 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:29:23 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:29:28 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:29:33 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:29:39 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:29:58 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:33:49 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (125)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:33:49 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '111' for key 'PRIMARY'. La sentencia SQL ejecutada fue: INSERT INTO `producto` (`idproducto`, `nombre`, `subcategoria_idsubcategoria`, `descripcion`, `marca`, `talla`, `precio`, `cantidad`, `estado_idestado`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (136)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:33:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '111' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `producto` (`idproducto`, `nombre`, `subcategoria_idsubcategoria`, `descripcion`, `marca`, `talla`, `precio`, `cantidad`, `estado_idestado`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php(136): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ProductoController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/pedidosOnline/producto/create
+HTTP_REFERER=http://localhost/pedidosOnline/producto/create
+---
+2014/07/18 16:34:43 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (125)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:36:51 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:36:51 [error] [php] move_uploaded_file(../images/productos/pedidosOnline6326-pantalon-hombre-hugo-boss.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 unknown(0): ProductoController->actionUpdate()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductoController->runAction()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductoController->filterAccessControl()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductoController->runActionWithFilters()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductoController->run()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/producto/update/9988
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (184)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:37:32 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:38:41 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:38:41 [error] [php] move_uploaded_file(/pedidosOnlineimages/productos/pedidosOnline7957-pieFirma.png) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 unknown(0): ProductoController->actionUpdate()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductoController->runAction()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductoController->filterAccessControl()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductoController->runActionWithFilters()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductoController->run()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/producto/update/9988
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (184)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:38:59 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:38:59 [error] [php] move_uploaded_file(/pedidosOnline/images/productos/pedidosOnline9534-pieFirma.png) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 unknown(0): ProductoController->actionUpdate()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductoController->runAction()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductoController->filterAccessControl()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductoController->runActionWithFilters()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductoController->run()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/producto/update/9988
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (184)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:39:16 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:41:03 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:42:57 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:43:45 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:44:25 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:44:35 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:46:13 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (172)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:46:23 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (172)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:46:37 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (172)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:47:22 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (161)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:47:46 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (170)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:49:05 [warning] [application] Error al establecer unsafe al atributo "img" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (170)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:57:11 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (177)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:57:11 [error] [php] move_uploaded_file(/images/productos/pedidosOnline9219-pantalon-hombre-hugo-boss.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 unknown(0): ProductoController->actionUpdate()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductoController->runAction()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductoController->filterAccessControl()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductoController->runActionWithFilters()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductoController->run()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/producto/update/9988
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (200)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:57:32 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (177)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:57:32 [error] [php] move_uploaded_file(../images/productos/pedidosOnline5234-pantalon-hombre-hugo-boss.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 unknown(0): ProductoController->actionUpdate()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductoController->runAction()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductoController->filterAccessControl()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductoController->runActionWithFilters()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductoController->run()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/producto/update/9988
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (200)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 16:58:01 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (177)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:02:10 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (175)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:02:36 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (175)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:08:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/producto/pedidosOnline7349-icono-web.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/producto...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/producto/pedidosOnline7349-icono-web.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/update/9988
+---
+2014/07/18 17:09:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/producto/pedidosOnline7349-icono-web.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/update/9988
+---
+2014/07/18 17:09:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/producto/pedidosOnline7349-icono-web.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/update/9988
+---
+2014/07/18 17:09:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/update...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pedidosOnline/producto/update/images/producto/pedidosOnline7349-icono-web.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/update/9988
+---
+2014/07/18 17:09:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/update...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/pedidosOnline/producto/update/images/producto/pedidosOnline7349-icono-web.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/update/9988
+---
+2014/07/18 17:15:18 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (125)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:15:48 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (125)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:16:43 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (125)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:18:27 [warning] [application] Error al establecer unsafe al atributo "idproducto" de "Producto".
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php (125)
+in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/18 17:18:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Producto no existe o no se encuentra disponible.' in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php:295
+Stack trace:
+#0 C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php(51): ProductoController->loadModel('99999')
+#1 [internal function]: ProductoController->actionView('99999')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductoController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/view')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/pedidosOnline/producto/99999
+---
+2014/07/18 17:31:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "pedidosOnline1112-pieFirma.png" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('pedidosOnline11...')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('pedidosOnline11...')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/pedido...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/pedidosOnline1112-pieFirma.png
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/index/1
+---
+2014/07/18 17:31:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "pedidosOnline1112-pieFirma.png" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('pedidosOnline11...')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('pedidosOnline11...')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/pedido...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/pedidosOnline1112-pieFirma.png
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/index/1
+---
+2014/07/18 17:31:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "pedidosOnline1112-pieFirma.png" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('pedidosOnline11...')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('pedidosOnline11...')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/pedido...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/pedidosOnline1112-pieFirma.png
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/index/1
+---
+2014/07/18 17:39:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/productos/pedidosOnline1112-pieFirma.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/9999
+---
+2014/07/18 17:39:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/productos/pedidosOnline1112-pieFirma.png
+HTTP_REFERER=http://localhost/pedidosOnline/producto/9999
+---
+2014/07/18 17:43:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "Producto"."imagen" no se encuentra definida.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('imagen')
+#1 C:\xampp\htdocs\pedidosOnline\protected\views\producto\view.php(11): CActiveRecord->__get('imagen')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php(110): CController->render('view', Array)
+#7 [internal function]: ProductoController->actionView('9999')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductoController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/pedidosOnline/producto/9999
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/index/1
+---
+2014/07/18 17:48:13 [error] [exception.CException] exception 'CException' with message 'Carro y sus behaviors no tienen un método o closure llamado "imagen".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('imagen', Array)
+#1 [internal function]: CActiveRecord->__call('imagen', Array)
+#2 C:\xampp\htdocs\pedidosOnline\protected\extensions\SFListCarro.php(11): Carro->imagen()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): SFListCarro->init()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.SFListCarro', Array)
+#5 C:\xampp\htdocs\pedidosOnline\protected\views\carro\list.php(7): CBaseController->widget('ext.SFListCarro', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#10 C:\xampp\htdocs\pedidosOnline\protected\controllers\CarroController.php(171): CController->render('list', Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarroController->actionList()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carro/list')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/pedidosOnline/carro/list
+HTTP_REFERER=http://localhost/pedidosOnline/producto/427
+---
+2014/07/18 17:48:14 [error] [exception.CException] exception 'CException' with message 'Carro y sus behaviors no tienen un método o closure llamado "imagen".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('imagen', Array)
+#1 [internal function]: CActiveRecord->__call('imagen', Array)
+#2 C:\xampp\htdocs\pedidosOnline\protected\extensions\SFListCarro.php(11): Carro->imagen()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): SFListCarro->init()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.SFListCarro', Array)
+#5 C:\xampp\htdocs\pedidosOnline\protected\views\carro\list.php(7): CBaseController->widget('ext.SFListCarro', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('list', Array, true)
+#10 C:\xampp\htdocs\pedidosOnline\protected\controllers\CarroController.php(171): CController->render('list', Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarroController->actionList()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('list')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carro/list')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/pedidosOnline/carro/list
+HTTP_REFERER=http://localhost/pedidosOnline/producto/427
+---
+2014/07/18 17:55:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/productos/
+HTTP_REFERER=http://localhost/pedidosOnline/producto/427
+---
+2014/07/18 17:56:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/productos/
+HTTP_REFERER=http://localhost/pedidosOnline/producto/427
+---
+2014/07/18 17:56:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/producto/images/productos/
+HTTP_REFERER=http://localhost/pedidosOnline/producto/427
+---
+2014/07/18 18:05:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/productos/pedidosOnline4512-prueba.jpg"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/producto...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/productos/pedidosOnline4512-prueba.jpg
+HTTP_REFERER=http://localhost/pedidosOnline/producto/9999
+---
+2014/07/18 18:05:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/productos/pedidosOnline4512-prueba.jpg"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/producto...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/productos/pedidosOnline4512-prueba.jpg
+HTTP_REFERER=http://localhost/pedidosOnline/producto/update/9999
+---

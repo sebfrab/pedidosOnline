@@ -7,41 +7,12 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'producto-form',
+        'id'=>'producto-form',
 	'enableAjaxValidation'=>false,
         'enableClientValidation' => true,
+        'htmlOptions' => array('enctype' => 'multipart/form-data'),
         'clientOptions' => array(
             'validateOnSubmit' => true,
-            'afterValidate' => 'js:function(form, data, hasError) {
-                if (!hasError){
-                    str = $("#producto-form").serialize() + "&ajax=producto-form";
-                    $.ajax({
-                        type: "POST",
-                        url: "' . Yii::app()->createUrl($url) . '",
-                        data: str,
-                        dataType: "json",
-                        beforeSend : function() {
-                            $("#producto-form").attr("disabled",true);
-                        },
-                        success: function(data, status) {
-                            if(data.insert)
-                            {
-                                window.location = data.redirectUrl;
-                            }
-                            else
-                            {
-                                $.each(data, function(key, value) {
-                                    var div = "#"+key+"_em_";
-                                    $(div).text(value);
-                                    $(div).show();
-                                });
-                                $("#producto-form").attr("disabled",false);
-                            }
-                        },
-                    });
-                    return false;
-                }
-            }',
         ),
 )); ?>
 
@@ -98,7 +69,19 @@
 		<?php echo $form->dropDownList($model, 'estado_idestado', Estado::model()->getListEstadosBool(), array('empty'=>'Seleccione estado', 'class'=>'form-control')) ?>
 		<?php echo $form->error($model,'estado_idestado',array('class'=>'alert alert-danger')); ?>
 	</div>
-
+    
+        <div class="form-group">
+		<?php echo $form->labelEx($model,'img'); ?>
+		<?php echo $form->fileField($model,'img'); ?>
+		<?php echo $form->error($model,'img', array('class'=>'help-block')); ?>
+	</div>
+    
+        <?php if(!$model->isNewRecord){ ?>
+            <div class="form-group">
+                    <?php echo CHtml::image('../../images/productos/'.$model->img,"#PedidosOnline",array("width"=>150, 'title'=>$model->img)); ?>
+            </div>
+        <?php } ?>
+    
 	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Ingresar' : 'Guardar',array('class'=>'btn btn-primary')); ?>
 	</div>
