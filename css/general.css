@@ -131,4 +131,9 @@ div.flash-success a
     }
 }
 
-
+@media (max-width: 767px) {
+  #redesSociales > li{
+        float: center;
+        height: 30px;
+  }
+}

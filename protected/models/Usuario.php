@@ -153,6 +153,9 @@ class Usuario extends CActiveRecord
                     $auth->assign('mantenedor_pedidos', $this->idusuario);
                     $auth->assign('mantenedor_detalle_pedido', $this->idusuario);
                     $auth->assign('import_csv', $this->idusuario);
+                    $auth->assign('mantenedor_tipo_usuario', $this->idusuario);
+                    $auth->assign('mantenedor_subcategorias', $this->idusuario);
+                    $auth->assign('mantenedor_categorias', $this->idusuario);
                     break;
                 case 2:
                     $auth->assign('pedidos', $this->idusuario);
@@ -209,11 +212,14 @@ class Usuario extends CActiveRecord
                     if(!$items){
                         switch ($usu->tipo_usuario_idtipo_usuario) {
                             case 1:
-                                $auth->assign('mantenedor_usuario', $usu->idusuario);
-                                $auth->assign('mantenedor_producto', $usu->idusuario);
-                                $auth->assign('mantenedor_pedidos', $usu->idusuario);
-                                $auth->assign('mantenedor_detalle_pedido', $usu->idusuario);
+                                $auth->assign('mantenedor_usuario', $this->idusuario);
+                                $auth->assign('mantenedor_producto', $this->idusuario);
+                                $auth->assign('mantenedor_pedidos', $this->idusuario);
+                                $auth->assign('mantenedor_detalle_pedido', $this->idusuario);
                                 $auth->assign('import_csv', $this->idusuario);
+                                $auth->assign('mantenedor_tipo_usuario', $this->idusuario);
+                                $auth->assign('mantenedor_subcategorias', $this->idusuario);
+                                $auth->assign('mantenedor_categorias', $this->idusuario);
                                 break;
                             case 2:
                                 $auth->assign('pedidos', $usu->idusuario);

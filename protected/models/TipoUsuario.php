@@ -41,6 +41,7 @@ class TipoUsuario extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'usuario'=>array(self::HAS_MANY,'Usuario','tipo_usuario_idtipo_usuario'),
 		);
 	}
 
@@ -91,6 +92,12 @@ class TipoUsuario extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        function beforeDelete(){
+            if( $this->usuario !== array() )
+                return false;
+            return parent::beforeDelete();
+        }
         
         public static function getListTipos(){
             return CHtml::listData( TipoUsuario::model()->findAll(),'idtipo_usuario','nombre');

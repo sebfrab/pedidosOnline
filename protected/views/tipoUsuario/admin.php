@@ -1,54 +1,72 @@
 <?php
-/* @var $this TipoUsuarioController */
-/* @var $model TipoUsuario */
-
-$this->breadcrumbs=array(
-	'Tipo Usuarios'=>array('index'),
-	'Manage',
-);
-
 $this->menu=array(
-	array('label'=>'List TipoUsuario', 'url'=>array('index')),
-	array('label'=>'Create TipoUsuario', 'url'=>array('create')),
+	array('label'=>'Nuevo Tipo de Usuario', 'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#tipo-usuario-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Manage Tipo Usuarios</h1>
+<h1>Mantenedor Tipo de Usuario</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<div id="statusMsg">
+<?php if(Yii::app()->user->hasFlash('success')):?>
+    <div class="flash-success">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+<?php endif; ?>
+ 
+<?php if(Yii::app()->user->hasFlash('error')):?>
+    <div class="flash-error">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+<?php endif; ?>
+</div>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tipo-usuario-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+        'itemsCssClass' => 'table table-hover',
+        'pager' => array(
+            'header' => '',
+            'hiddenPageCssClass' => 'disabled',
+            'maxButtonCount' => 5,
+            'cssFile' => false,
+            'prevPageLabel' => '<i class="icon-chevron-left"><</i>',
+            'nextPageLabel' => '<i class="icon-chevron-right">></i>',
+            'firstPageLabel' => 'First',
+            'lastPageLabel' => 'Last',
+        ),
 	'columns'=>array(
-		'idtipo_usuario',
+                array(
+                    'name'=>'idtipo_usuario',
+                    'header'=>'#',
+                    'value'=>'$data->idtipo_usuario',
+                    'htmlOptions'=>array(
+                        'width'=>'60',
+                        ),
+                ),
 		'nombre',
 		array(
-			'class'=>'CButtonColumn',
-		),
+                        'class'=>'CButtonColumn',
+                        'htmlOptions'=>array('width'=>'100px'),
+                        'template'=>'{view}{update}{delete}',
+                        'afterDelete'=>'function(link,success,data){ if(success) $("#statusMsg").html(data); }',
+                        'buttons'=>array(
+                            'view' => array
+                            (
+                                'label'=>'ver',
+                                'imageUrl'=>Yii::app()->request->baseUrl.'/images/iconos/ver.png',
+                            ),
+                            'update' => array
+                            (
+                                'label'=>'actualizar',
+                                'imageUrl'=>Yii::app()->request->baseUrl.'/images/iconos/actualizar.png',
+                            ),
+                            'delete' => array
+                            (
+                                'label'=>'eliminar',
+                                'imageUrl'=>Yii::app()->request->baseUrl.'/images/iconos/eliminar.png',
+                            ),
+                        ),
+                ),
 	),
 )); ?>

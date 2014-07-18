@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TipoUsuario', 'url'=>array('index')),
-	array('label'=>'Manage TipoUsuario', 'url'=>array('admin')),
+	array('label'=>'Mantenedor Tipo de Usuario', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create TipoUsuario</h1>
+<h1>Nuevo Tipo de Usuario</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'url'=>$url)); ?>

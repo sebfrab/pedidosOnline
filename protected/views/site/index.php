@@ -67,7 +67,8 @@
         
         <?php if(Yii::app()->user->hasFlash('contact')): ?>
             <div id="statusMsg">
-                <div class="success">
+                <div class="flash-success">
+                    asdasd
                     <?php echo Yii::app()->user->getFlash('contact'); ?>
                 </div>
             </div>

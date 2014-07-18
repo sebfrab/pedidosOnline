@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TipoUsuario', 'url'=>array('index')),
-	array('label'=>'Create TipoUsuario', 'url'=>array('create')),
-	array('label'=>'View TipoUsuario', 'url'=>array('view', 'id'=>$model->idtipo_usuario)),
-	array('label'=>'Manage TipoUsuario', 'url'=>array('admin')),
+	array('label'=>'Nuevo Tipo de Usuario', 'url'=>array('create')),
+	array('label'=>'Ver Tipo de Usuario', 'url'=>array('view', 'id'=>$model->idtipo_usuario)),
+	array('label'=>'Mantenedor Tipo de Usuario', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update TipoUsuario <?php echo $model->idtipo_usuario; ?></h1>
+<h1>Actualizar Tipo de Usuario <?php echo $model->idtipo_usuario; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'url'=>$url)); ?>

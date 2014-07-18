@@ -29,7 +29,7 @@ class TipoUsuarioController extends Controller
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','index','view','admin','delete'),
-				'users'=>array('@'),
+				'expression'=>'Yii::app()->user->checkAccess("mantenedor_tipo_usuario")',
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -56,18 +56,30 @@ class TipoUsuarioController extends Controller
 	{
 		$model=new TipoUsuario;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['TipoUsuario']))
+		$this->performAjaxValidationSubmit($model);
+                
+                if(isset($_POST['TipoUsuario']))
 		{
-			$model->attributes=$_POST['TipoUsuario'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idtipo_usuario));
+                        $model->attributes=$_POST['TipoUsuario'];
+                        if(isset($_POST['ajax']) && $_POST['ajax']==='tipo-usuario-form')
+                        {  
+                            if($model->save()){ 
+                                echo CJSON::encode(array(
+                                    'insert' => true,
+                                    'redirectUrl' => Yii::app()->createUrl('tipousuario/'.$model->idtipo_usuario)
+                                ));
+                                Yii::app()->end();
+                            } 
+                        }else{
+                            if($model->save()){
+                                $this->redirect(array('view','id'=>$model->idtipo_usuario));
+                            }
+                        }   
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+                        'url'=>'tipousuario/create',
 		));
 	}
 
@@ -80,18 +92,30 @@ class TipoUsuarioController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['TipoUsuario']))
-		{
-			$model->attributes=$_POST['TipoUsuario'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->idtipo_usuario));
-		}
+		$this->performAjaxValidationSubmit($model);
+                
+                if(isset($_POST['TipoUsuario']))
+                {
+                    $model->attributes=$_POST['TipoUsuario'];
+                    if(isset($_POST['ajax']) && $_POST['ajax']==='tipo-usuario-form')
+                    {  
+                        if($model->save()){ 
+                            echo CJSON::encode(array(
+                                'insert' => true,
+                                'redirectUrl' => Yii::app()->createUrl('tipousuario/'.$model->idtipo_usuario)
+                            ));
+                            Yii::app()->end();
+                        } 
+                    }else{
+                        if($model->save()){
+                            $this->redirect(array('view','id'=>$model->idtipo_usuario));
+                        }
+                    }   
+                }
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'url'=>'tipousuario/update/'.$id
 		));
 	}
 
@@ -102,11 +126,34 @@ class TipoUsuarioController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+                if(Yii::app()->request->isPostRequest)
+                {
+                    try{
+                        $status = $this->loadModel($id)->delete();
+                        if ($status){
+                            if(!isset($_GET['ajax']))
+                                Yii::app()->user->setFlash('success','Tipo de Usuario eliminado');
+                            else
+                                echo "<div class='flash-success'>Tipo de Usuario eliminado</div>";
+                        }else{
+                            if(!isset($_GET['ajax']))
+                                Yii::app()->user->setFlash('error','Tipo de Usuario no se puede eliminar');
+                            else
+                                echo "<div class='flash-error'>Tipo de Usuario no se puede eliminar</div>"; //for ajax
+                        }
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                    }catch(CDbException $e){
+
+                        if(!isset($_GET['ajax']))
+                            Yii::app()->user->setFlash('error','Tipo de Usuario no se puede eliminar');
+                        else
+                            echo "<div class='flash-error'>Tipo de Usuario no se puede eliminar</div>"; //for ajax
+
+                    }
+
+                    if(!isset($_GET['ajax']))
+                        $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                }
 	}
 
 	/**
@@ -114,10 +161,11 @@ class TipoUsuarioController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('TipoUsuario');
+		/*$dataProvider=new CActiveDataProvider('TipoUsuario');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
+                $this->redirect(array('admin'));
 	}
 
 	/**
@@ -160,6 +208,19 @@ class TipoUsuarioController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+        
+        protected function performAjaxValidationSubmit($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='tipo-usuario-form')
+		{
+			$errors = CActiveForm::validate($model);
+                        if ($errors != '[]')
+                        {
+                            echo $errors;
+                            Yii::app()->end();
+                        }
 		}
 	}
 }

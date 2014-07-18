@@ -23,6 +23,7 @@
 
     <?php
         $auth=Yii::app()->authManager;
+        //$task=$auth->createTask('mantenedor_tipo_usuario','acceso total al mantenedor de los tipos de usuario');
         //$task=$auth->createTask('mantenedor_categorias','acceso total al mantenedor de categorias');
         //$task=$auth->createTask('mantenedor_subcategorias','acceso total al mantenedor de subcategorias');
         //$task=$auth->createTask('import_csv','importación de datos desde archivos .csv');
@@ -97,6 +98,7 @@
                                                         array('label'=>'Pedidos', 'url'=>array('/pedido'),'visible'=>$auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Producto', 'url'=>array('/producto'),'visible'=>$auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
                                                         array('label'=>'Subcategoria', 'url'=>array('/subcategoria'),'visible'=>$auth->checkAccess('mantenedor_subcategorias',Yii::app()->user->id)),
+                                                        array('label'=>'Tipo de usuario', 'url'=>array('/tipousuario'),'visible'=>$auth->checkAccess('mantenedor_tipo_usuario',Yii::app()->user->id)),
                                                         array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
                                                     ),                                                    
                                                     'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_productos',Yii::app()->user->id)),
@@ -127,7 +129,7 @@
         <footer class="footer">
             <div style=" background-color: #232323; height: 130px; padding-top:30px;"  class="container-fluid">
                 <p style="text-align: center; color: #9b9b9c;">&#169;2014 Escuela Naval "Arturo Prat"</p>
-                <ul style="width:100px; margin:0px auto; " class="nav nav-pills nav-justified">
+                <ul style="width:100px; margin:0px auto;" class="nav nav-pills nav-justified" id="redesSociales">
                     <li><a target="_blank" href="http://www.facebook.com/EscuelaNavalChile" title="facebook"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/facebook.png" /></a></li>
                     <li><a target="_blank" href="http://twitter.com/#!/Armada_Chile" title="twitter"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/twitter.png" /></a></li>
                 </ul>
