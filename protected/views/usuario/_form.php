@@ -65,7 +65,7 @@
     
         <div class="form-group">
 		<?php echo $form->labelEx($model,'password_2',array('class'=>'control-label')); ?>
-		<?php echo $form->textField($model,'password_2',array('size'=>50,'maxlength'=>200, 'class'=>'form-control')) ?>
+		<?php echo $form->textField($model,'password_2',array('size'=>50,'maxlength'=>100, 'class'=>'form-control')) ?>
 		<?php echo $form->error($model,'password_2',array('class'=>'alert alert-danger')); ?>
 	</div>
     

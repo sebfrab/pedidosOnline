@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Pedidos Online',
-        'sourceLanguage' => 'es',
+        'sourceLanguage' => 'es_ES',
         'language'=>'es',
         'theme'=>'bootstrap',
 
@@ -22,8 +22,6 @@ return array(
 	),
 
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'pphkk',
@@ -33,7 +31,29 @@ return array(
                 'importcsv'=>array(
                     'path'=>'upload/importcsv/', // path to folder for saving csv file and file with import params
                 ),
-		
+                'jbackup'=>array(
+                    'path' => __DIR__.'/../_backup/', //Directory where backups are saved
+                    'layout' => '//layouts/column2', //2-column layout to display the options
+                    'filter' => 'accessControl', //filter or filters to the controller
+                    'bootstrap' => false, //if you want the module use bootstrap components
+                    'download' => true, // if you want the option to download
+                    'restore' => true, // if you want the option to restore
+                    'database' => true, //whether to make backup of the database or not
+                    //directory to consider for backup, must be made array key => value array ($ alias => $ directory)
+                    'directoryBackup'=>array( 
+                       'folder/'=> __DIR__.'/../../folder/',
+                    ),
+                    //directory sebe not take into account when the backup
+                    'excludeDirectoryBackup'=>array(
+                       __DIR__.'/../../folder/folder2/',
+                    ),
+                    //files sebe not take into account when the backup
+                    'excludeFileBackup'=>array(
+                       __DIR__.'/../../folder/folder1/cfile.png',
+                    ),
+                    //directory where the backup should be done default Yii::getPathOfAlias('webroot')
+                    'directoryRestoreBackup'=>__DIR__.'/../../' 
+                 ),
 	),
 
 	// application components

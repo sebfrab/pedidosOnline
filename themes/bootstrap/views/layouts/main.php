@@ -23,6 +23,7 @@
 
     <?php
         $auth=Yii::app()->authManager;
+        //$task=$auth->createTask('backup','acceso a los backup, realizarlo, eliminarlos y restauración');
         //$task=$auth->createTask('mantenedor_tipo_usuario','acceso total al mantenedor de los tipos de usuario');
         //$task=$auth->createTask('mantenedor_categorias','acceso total al mantenedor de categorias');
         //$task=$auth->createTask('mantenedor_subcategorias','acceso total al mantenedor de subcategorias');
@@ -92,6 +93,7 @@
                                                         'data-toggle'=>'dropdown',
                                                     ),
                                                     'items'=>array(
+                                                        array('label'=>'Backup', 'url'=>array('/jbackup'),'visible'=>$auth->checkAccess('backup',Yii::app()->user->id)),
                                                         array('label'=>'Categoria', 'url'=>array('/categoria'),'visible'=>$auth->checkAccess('mantenedor_categorias',Yii::app()->user->id)),
                                                         array('label'=>'Detalle Pedidos', 'url'=>array('/detallePedido'),'visible'=>$auth->checkAccess('mantenedor_detalle_pedido',Yii::app()->user->id)),
                                                         array('label'=>'Import .csv', 'url'=>array('/importcsv'),'visible'=>$auth->checkAccess('import_csv',Yii::app()->user->id)),
@@ -109,6 +111,7 @@
                                                     ),
                                                     'items'=>array(
                                                         array('label'=>'Pedidos', 'url'=>array('pedido/list'),'visible'=>$auth->checkAccess('pedidos',Yii::app()->user->id)),
+                                                        array('label'=>'Cambio de Contraseña', 'url'=>array('/usuario/changepassword/'.Yii::app()->user->id)),
                                                         array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
                                                     ),                                                    
                                                     'visible'=>!Yii::app()->user->isGuest),

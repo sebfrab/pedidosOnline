@@ -18,6 +18,9 @@
 class Usuario extends CActiveRecord
 {
 	public static $generos=array('H'=>'Hombre','M'=>'Mujer');
+        public $old_password;
+        public $new_password;
+        public $repeat_password;
         
 	public function tableName()
 	{
@@ -35,12 +38,18 @@ class Usuario extends CActiveRecord
 			array('tipo_usuario_idtipo_usuario, estado_idestado, username, password_2, nombres, apellidos, sexo', 'required'),
 			array('tipo_usuario_idtipo_usuario, estado_idestado', 'length', 'max'=>10),
 			array('username, nombres, apellidos', 'length', 'max'=>50),
-			array('password_2', 'length', 'max'=>200),
+			array('password_2', 'length', 'max'=>100),
 			array('sexo', 'length', 'max'=>1),
 			array('email', 'length', 'max'=>150),
                         array('email','email'),
                         array('username','unique','attributeName' => 'username' ,'className' => 'Usuario'),
 			array('last_login', 'safe'),
+                        
+                        array('old_password, new_password, repeat_password', 'length', 'max'=>100),
+                        array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
+                        array('old_password', 'findPasswords', 'on' => 'changePwd'),
+                        array('repeat_password', 'compare', 'compareAttribute'=>'new_password', 'on'=>'changePwd'),
+                    
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idusuario, tipo_usuario_idtipo_usuario, estado_idestado, username, password_2, nombres, apellidos, sexo, last_login, email', 'safe', 'on'=>'search'),
@@ -80,6 +89,10 @@ class Usuario extends CActiveRecord
 			'last_login' => 'Last Login',
 			'email' => 'Email',
                         'nombrecompleto' => 'Nombre',
+                    
+                        'old_password' => 'Contraseña Actual',
+			'new_password' => 'Nueva Contraseña',
+                        'repeat_password' => 'Repetir Nueva Contraseña',
 		);
 	}
 
@@ -156,6 +169,7 @@ class Usuario extends CActiveRecord
                     $auth->assign('mantenedor_tipo_usuario', $this->idusuario);
                     $auth->assign('mantenedor_subcategorias', $this->idusuario);
                     $auth->assign('mantenedor_categorias', $this->idusuario);
+                    $auth->assign('backup', $this->idusuario);
                     break;
                 case 2:
                     $auth->assign('pedidos', $this->idusuario);
@@ -171,6 +185,13 @@ class Usuario extends CActiveRecord
                     $auth->assign('pedidos', $this->idusuario);
                     break;
             }
+        }
+        
+        public function findPasswords($attribute, $params)
+        {
+            $user = Usuario::model()->findByPk(Yii::app()->user->id);
+            if ($user->password_2 != $this->hashPassword($this->old_password))
+                $this->addError($attribute, 'Contraseña Actual es incorrecta');
         }
         
         function beforeDelete(){
@@ -220,6 +241,7 @@ class Usuario extends CActiveRecord
                                 $auth->assign('mantenedor_tipo_usuario', $this->idusuario);
                                 $auth->assign('mantenedor_subcategorias', $this->idusuario);
                                 $auth->assign('mantenedor_categorias', $this->idusuario);
+                                $auth->assign('backup', $this->idusuario);
                                 break;
                             case 2:
                                 $auth->assign('pedidos', $usu->idusuario);

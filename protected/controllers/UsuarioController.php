@@ -28,8 +28,12 @@ class UsuarioController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','index','view','assign','createPermissionsNewUsuario'),
+				'actions'=>array('create','update','admin','delete','index','view','assign','createPermissionsNewUsuario','changepassword'),
 				'expression'=>'Yii::app()->user->checkAccess("mantenedor_usuario")',
+			),
+                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('changepassword'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -196,6 +200,38 @@ class UsuarioController extends Controller
                 Yii::app()->authManager->assign($_GET["item"], $id);
             
             $this->redirect(array("view","id"=>$id));
+        }
+        
+        public function actionChangepassword($id)
+        {
+            if($id != Yii::app()->user->id){
+                $this->redirect(array('./'));
+            }
+            
+            $model = new Usuario;
+
+            $model = Usuario::model()->findByAttributes(array('idusuario'=>$id));
+            $model->setScenario('changePwd');
+
+            if(isset($_POST['Usuario'])){
+
+                $model->attributes = $_POST['Usuario'];
+                $valid = $model->validate();
+
+                if($valid){
+                  $model->password_2 = md5($model->new_password);
+
+                  if($model->save()){
+                      Yii::app()->user->setFlash('success','Contraseña modificada');
+                      $this->redirect(array('changepassword','id'=>Yii::app()->user->id));
+                  }else{
+                      Yii::app()->user->setFlash('error','Contraseña no se pudo modificar');
+                      $this->redirect(array('changepassword','id'=>Yii::app()->user->id));
+                  }  
+                }
+            }
+
+            $this->render('changepassword',array('model'=>$model)); 
         }
 
 	/**
