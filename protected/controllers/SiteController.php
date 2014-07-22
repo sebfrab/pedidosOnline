@@ -125,6 +125,13 @@ class SiteController extends Controller
             
             
 	}
+        
+        public function actionSupport()
+	{
+                $this->layout='//layouts/column2';
+		$this->render('support');
+	}
+        
 
 	/**
 	 * Logs out the current user and redirect to homepage.

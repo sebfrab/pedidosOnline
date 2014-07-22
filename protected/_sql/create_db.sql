@@ -1,9 +1,3 @@
-CREATE TABLE tipo_usuario (
-  idtipo_usuario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(50) NOT NULL,
-  PRIMARY KEY(idtipo_usuario)
-);
-
 CREATE TABLE estado (
   idestado INTEGER UNSIGNED NOT NULL,
   nombre VARCHAR(50) NOT NULL,
@@ -15,6 +9,36 @@ CREATE TABLE categoria (
   idcategoria INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(100) NULL,
   PRIMARY KEY(idcategoria)
+);
+
+CREATE TABLE tipo_usuario (
+  idtipo_usuario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(50) NOT NULL,
+  PRIMARY KEY(idtipo_usuario)
+);
+
+CREATE TABLE authassignment (
+  itemname VARCHAR(64) NOT NULL,
+  userid VARCHAR(64) NOT NULL,
+  bizrule TEXT NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY(itemname, userid)
+);
+
+CREATE TABLE authitem (
+  name VARCHAR(64) NOT NULL,
+  type INTEGER(11) NOT NULL,
+  description TEXT NOT NULL,
+  bizrule TEXT NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY(name)
+);
+
+CREATE TABLE authitemchild (
+  parent VARCHAR(64) NOT NULL,
+  child VARCHAR(64) NOT NULL,
+  PRIMARY KEY(parent, child),
+  INDEX child(child)
 );
 
 CREATE TABLE subcategoria (

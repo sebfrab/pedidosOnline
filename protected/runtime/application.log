@@ -12343,3 +12343,280 @@ Stack trace:
 REQUEST_URI=/pedidosOnline/jbackup/default/create
 in C:\xampp\htdocs\pedidosOnline\protected\modules\jbackup\controllers\DefaultController.php (303)
 in C:\xampp\htdocs\pedidosOnline\index.php (13)
+2014/07/22 11:48:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "support"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('support')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/support
+---
+2014/07/22 11:48:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "support"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('support')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/support
+---
+2014/07/22 13:28:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:28:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:29:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:29:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:29:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:30:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:30:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:30:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:31:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:31:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:31:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:32:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:33:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:35:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:38:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
+2014/07/22 13:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/support/contacsdto.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/support/...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
+HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
+---
