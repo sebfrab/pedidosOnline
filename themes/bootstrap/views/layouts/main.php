@@ -71,6 +71,7 @@
                                 )); ?>
                                 
                                 <?php
+                                $carroCount = 0;
                                 if(!Yii::app()->user->isGuest){
                                     $carroCount = Carro::model()->countCarro();
                                 }
