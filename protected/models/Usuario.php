@@ -161,28 +161,28 @@ class Usuario extends CActiveRecord
             
             switch ($this->tipo_usuario_idtipo_usuario) {
                             case 1:
-                                $auth->assign('mantenedor_usuario', $this->idusuario,'NULL');
-                                $auth->assign('mantenedor_producto', $this->idusuario,'NULL');
-                                $auth->assign('mantenedor_pedidos', $this->idusuario,'NULL');
-                                $auth->assign('mantenedor_detalle_pedido', $this->idusuario,'NULL');
-                                $auth->assign('import_csv', $this->idusuario,'NULL');
-                                $auth->assign('mantenedor_tipo_usuario', $this->idusuario,'NULL');
-                                $auth->assign('mantenedor_subcategorias', $this->idusuario,'NULL');
-                                $auth->assign('mantenedor_categorias', $this->idusuario,'NULL');
-                                $auth->assign('backup', $this->idusuario,'NULL');
+                                $auth->assign('mantenedor_usuario', $this->idusuario);
+                                $auth->assign('mantenedor_producto', $this->idusuario);
+                                $auth->assign('mantenedor_pedidos', $this->idusuario);
+                                $auth->assign('mantenedor_detalle_pedido', $this->idusuario);
+                                $auth->assign('import_csv', $this->idusuario);
+                                $auth->assign('mantenedor_tipo_usuario', $this->idusuario);
+                                $auth->assign('mantenedor_subcategorias', $this->idusuario);
+                                $auth->assign('mantenedor_categorias', $this->idusuario);
+                                $auth->assign('backup', $this->idusuario);
                                 break;
                             case 2:
-                                $auth->assign('pedidos', $this->idusuario,'NULL');
+                                $auth->assign('pedidos', $this->idusuario);
                                 break;
                             case 3:
-                                $auth->assign('lista_productos', $this->idusuario,'NULL');
-                                $auth->assign('carro', $this->idusuario,'NULL');
-                                $auth->assign('pedidos', $this->idusuario,'NULL');
+                                $auth->assign('lista_productos', $this->idusuario);
+                                $auth->assign('carro', $this->idusuario);
+                                $auth->assign('pedidos', $this->idusuario);
                                 break;
                             case 4:
-                                $auth->assign('lista_productos', $this->idusuario,'NULL');
-                                $auth->assign('carro', $this->idusuario,'NULL');
-                                $auth->assign('pedidos', $this->idusuario,'NULL');
+                                $auth->assign('lista_productos', $this->idusuario);
+                                $auth->assign('carro', $this->idusuario);
+                                $auth->assign('pedidos', $this->idusuario);
                                 break;
             }
         }
@@ -233,28 +233,28 @@ class Usuario extends CActiveRecord
                     if(!$items){
                         switch ($usu->tipo_usuario_idtipo_usuario) {
                             case 1:
-                                $auth->assign('mantenedor_usuario', $usu->idusuario,'NULL');
-                                $auth->assign('mantenedor_producto', $usu->idusuario,'NULL');
-                                $auth->assign('mantenedor_pedidos', $usu->idusuario,'NULL');
-                                $auth->assign('mantenedor_detalle_pedido', $usu->idusuario,'NULL');
-                                $auth->assign('import_csv', $usu->idusuario,'NULL');
-                                $auth->assign('mantenedor_tipo_usuario', $usu->idusuario,'NULL');
-                                $auth->assign('mantenedor_subcategorias', $usu->idusuario,'NULL');
-                                $auth->assign('mantenedor_categorias', $usu->idusuario,'NULL');
-                                $auth->assign('backup', $usu->idusuario,'NULL');
+                                $auth->assign('mantenedor_usuario', $usu->idusuario);
+                                $auth->assign('mantenedor_producto', $usu->idusuario);
+                                $auth->assign('mantenedor_pedidos', $usu->idusuario);
+                                $auth->assign('mantenedor_detalle_pedido', $usu->idusuario);
+                                $auth->assign('import_csv', $usu->idusuario);
+                                $auth->assign('mantenedor_tipo_usuario', $usu->idusuario);
+                                $auth->assign('mantenedor_subcategorias', $usu->idusuario);
+                                $auth->assign('mantenedor_categorias', $usu->idusuario);
+                                $auth->assign('backup', $usu->idusuario);
                                 break;
                             case 2:
-                                $auth->assign('pedidos', $usu->idusuario,'NULL');
+                                $auth->assign('pedidos', $usu->idusuario);
                                 break;
                             case 3:
-                                $auth->assign('lista_productos', $usu->idusuario,'NULL');
-                                $auth->assign('carro', $usu->idusuario,'NULL');
-                                $auth->assign('pedidos', $usu->idusuario,'NULL');
+                                $auth->assign('lista_productos', $usu->idusuario);
+                                $auth->assign('carro', $usu->idusuario);
+                                $auth->assign('pedidos', $usu->idusuario);
                                 break;
                             case 4:
-                                $auth->assign('lista_productos', $usu->idusuario,'NULL');
-                                $auth->assign('carro', $usu->idusuario,'NULL');
-                                $auth->assign('pedidos', $usu->idusuario,'NULL');
+                                $auth->assign('lista_productos', $usu->idusuario);
+                                $auth->assign('carro', $usu->idusuario);
+                                $auth->assign('pedidos', $usu->idusuario);
                                 break;
                     }
                 }  
