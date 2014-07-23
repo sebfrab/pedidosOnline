@@ -41,7 +41,7 @@
 
 
 
-<a class="fancybox" href="<?php echo Yii::app()->createUrl("images/support/contacto.png"); ?>">
+<a class="fancybox" href="<?php echo Yii::app()->createUrl("images/support/login.png"); ?>">
 <img class="thumbnail col-lg-6 col-md-6 col-sm-12 col-xs-12" 
      src="<?php echo Yii::app()->createUrl("images/support/login.png") ?>" />
 </a>
