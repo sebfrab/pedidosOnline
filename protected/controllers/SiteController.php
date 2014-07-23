@@ -47,7 +47,6 @@ class SiteController extends Controller
 			}
 		}
             
-            
 		$this->render('index',array('model'=>$model));
 	}
 

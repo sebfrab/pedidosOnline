@@ -15,7 +15,7 @@
 
 <div class="container">
     <div class="row">
-        <h1 style="text-align: center; margin-bottom: 50px;">COMÓ TE AYUDA</h1>
+        <h1 style="text-align: center; margin-bottom: 50px;">CÓMO TE AYUDA</h1>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/esperando.jpg" alt="" class="img-responsive img-circle center-block" />
             <br/>
@@ -68,7 +68,6 @@
         <?php if(Yii::app()->user->hasFlash('contact')): ?>
             <div id="statusMsg">
                 <div class="flash-success">
-                    asdasd
                     <?php echo Yii::app()->user->getFlash('contact'); ?>
                 </div>
             </div>

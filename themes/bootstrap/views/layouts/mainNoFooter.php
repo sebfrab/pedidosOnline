@@ -35,7 +35,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="<?php echo Yii::app()->request->baseUrl; ?>" class="navbar-brand"><p style="color: #297fb8;">Pedidos<b>Online</b></p></a>
+                                <a href="<?php echo Yii::app()->createUrl('./'); ?>" class="navbar-brand"><p style="color: #297fb8;">Pedidos<b>Online</b></p></a>
                             </div>
                             <div class="navbar-collapse bs-js-navbar-collapse collapse">
                                 
