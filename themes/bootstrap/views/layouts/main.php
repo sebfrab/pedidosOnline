@@ -34,7 +34,7 @@
         //$task=$auth->createTask('mantenedor_usuario','acceso completo al mantenedor de usuarios');
         //$task=$auth->createTask('lista_productos','acceso para visualizar la lista de productos del sistema');
         //$task=$auth->createTask('carro_pedidos','acceso al carro de compra');
-        //$task=$auth->createTask('mantenedor_productos','acceso completo al mantenedor de productos');
+        //$task=$auth->createTask('mantenedor_producto','acceso completo al mantenedor de productos');
     ?>
     
     <body>
@@ -101,7 +101,7 @@
                                                         array('label'=>'Pedidos', 'url'=>array('/pedido'),'visible'=>$auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Producto', 'url'=>array('/producto'),'visible'=>$auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
                                                         array('label'=>'Subcategoria', 'url'=>array('/subcategoria'),'visible'=>$auth->checkAccess('mantenedor_subcategorias',Yii::app()->user->id)),
-                                                        array('label'=>'Tipo de usuario', 'url'=>array('/tipousuario'),'visible'=>$auth->checkAccess('mantenedor_tipo_usuario',Yii::app()->user->id)),
+                                                        array('label'=>'Tipo de usuario', 'url'=>array('/tipoUsuario'),'visible'=>$auth->checkAccess('mantenedor_tipo_usuario',Yii::app()->user->id)),
                                                         array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
                                                     ),                                                    
                                                     'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_productos',Yii::app()->user->id)),

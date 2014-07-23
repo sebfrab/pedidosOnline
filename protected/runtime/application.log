@@ -12620,3 +12620,26 @@ Stack trace:
 REQUEST_URI=/pedidosOnline/images/support/contacsdto.png
 HTTP_REFERER=http://localhost/pedidosOnline/site/support?%3E
 ---
+2014/07/23 16:25:08 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\pedidosOnline\protected\models\Pedido.php:88)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): PedidoController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(869): PedidoController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(782): PedidoController->renderPartial()
+#3 C:\xampp\htdocs\pedidosOnline\protected\controllers\PedidoController.php(199): PedidoController->render()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PedidoController->actionList()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PedidoController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PedidoController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): PedidoController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PedidoController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\pedidosOnline\index.php(13): CWebApplication->run()
+REQUEST_URI=/pedidosOnline/pedido/list
+in C:\xampp\htdocs\pedidosOnline\protected\models\Pedido.php (88)
+in C:\xampp\htdocs\pedidosOnline\protected\views\pedido\list.php (18)
+in C:\xampp\htdocs\pedidosOnline\protected\controllers\PedidoController.php (199)

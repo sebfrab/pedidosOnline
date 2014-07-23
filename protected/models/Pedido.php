@@ -85,13 +85,13 @@ class Pedido extends CActiveRecord
                 $criteria->with=array('usuario', 'estado');
                 if($usuario->tipo->idtipo_usuario==1 || $usuario->tipo->idtipo_usuario==2){
                     $criteria->compare('idpedido',$this->idpedido,true);
-                    $criteria->compare('usuario.username',$this->usuario->username,true);
+                    //$criteria->compare('usuario.username',$this->usuario->username,true);
                     $criteria->compare('estado.idestado',$this->estado_idestado,true);
                     $criteria->compare('usuario.nombres',$this->usuario_idusuario,true);
                     $criteria->compare('fecha_pedido',$this->fecha_pedido,true);
                 }else{
                     $criteria->compare('idpedido',$this->idpedido,true);
-                    $criteria->compare('usuario.username',$this->usuario->username,true);
+                    //$criteria->compare('usuario.username',$this->usuario->username,true);
                     $criteria->compare('estado.idestado',$this->estado_idestado,true);
                     $criteria->compare('usuario.nombres',$this->usuario_idusuario,true);
                     $criteria->compare('fecha_pedido',$this->fecha_pedido,true);

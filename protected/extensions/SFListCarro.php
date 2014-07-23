@@ -5,6 +5,8 @@ class SFListCarro extends CWidget{
     
     public function init(){
         parent::init();
+        $i=0;
+        $suma = 0;
         foreach($this->model as $item){
             $i++;
             echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
