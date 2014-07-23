@@ -22,21 +22,31 @@ $this->menu=array(
 )); ?>
 
 
-<ul class="nav nav-pills nav-stacked">
-<?php foreach(Yii::app()->authManager->getAuthItems() as $data):?>
-    <?php $enabled=Yii::app()->authManager->checkAccess($data->name, $model->idusuario) ?>
-    <li>
-        <a>
-            <h4><?php echo $data->name ?> 
-                <small>
-                    <?php if($data->type==0) echo "Role"; ?>
-                    <?php if($data->type==1) echo "Tarea"; ?>
-                    <?php if($data->type==2) echo "Operación"; ?>
-                </small> 
-                <?php echo CHtml::link($enabled?"Off":"On",array("usuario/assign", "id"=>$model->idusuario, "item"=>$data->name),
-                                array("class"=>$enabled?'btn btn-default':'btn btn-primary'));?>
-            </h4>
-        </a>
-    </li>
-<?php endforeach; ?>
-</ul>
+
+<div style="margin-top: 40px;" class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+      Permisos
+  </div>
+  <div class="panel-body">
+  </div>
+  <!-- Table -->
+  <table class="table">
+
+      <?php foreach(Yii::app()->authManager->getAuthItems() as $data):?>
+        <?php $enabled=Yii::app()->authManager->checkAccess($data->name, $model->idusuario) ?>
+        <tr>
+        <td><?php echo $data->name ?></td>
+        <td>
+            <?php if($data->type==0) echo "Role"; ?>
+            <?php if($data->type==1) echo "Tarea"; ?>
+            <?php if($data->type==2) echo "Operación"; ?>
+        </td>
+        <td><?php echo CHtml::link($enabled?"Off":"On",array("usuario/assign", "id"=>$model->idusuario, "item"=>$data->name),
+                                    array("class"=>$enabled?'btn btn-default':'btn btn-primary'));?></td>
+        </tr>   
+    <?php endforeach; ?>
+      
+      
+  </table>
+</div>
