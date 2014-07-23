@@ -27,9 +27,10 @@
             contactarnos</a>
     </p>       
 </div>
-
+<a class="fancybox" href="<?php echo Yii::app()->createUrl("images/support/contacto.png"); ?>">
 <img class="thumbnail col-lg-6 col-md-6 col-sm-12 col-xs-12" 
-     src="<?php echo Yii::app()->createUrl("images/support/contacto.png") ?>" />
+     src="<?php echo Yii::app()->createUrl("images/support/contacto.png"); ?>" />
+</a>
 
 
 
@@ -40,9 +41,10 @@
 
 
 
-
+<a class="fancybox" href="<?php echo Yii::app()->createUrl("images/support/contacto.png"); ?>">
 <img class="thumbnail col-lg-6 col-md-6 col-sm-12 col-xs-12" 
      src="<?php echo Yii::app()->createUrl("images/support/login.png") ?>" />
+</a>
 
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="crearCuenta">
     <h1 class="colorBlue">Cómo iniciar sesión Pedidos<b>Online</b></h1>

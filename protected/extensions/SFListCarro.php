@@ -12,7 +12,11 @@ class SFListCarro extends CWidget{
             echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
             $urlImage = $item->producto->imagen();
             $nombre_producto = $item->producto->nombre;
-            echo "<div class=\"thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-12\"><img src=\"$urlImage\"  alt=\"$nombre_producto\"></div>";
+            echo "<div class=\"thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-12\">
+                    <a class=\"fancybox\" href=\"$urlImage\">
+                        <img src=\"$urlImage\"  alt=\"$nombre_producto\">
+                    </a>
+                  </div>";
             
             echo "<div class=\"col-lg-4 col-md-4 col-sm-3 col-xs-12\">";
             echo "<p style=\"margin-bottom: 0px;\"><b>$nombre_producto</b></p>";

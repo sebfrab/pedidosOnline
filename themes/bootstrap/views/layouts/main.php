@@ -18,6 +18,9 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/general.css" />
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -143,10 +146,17 @@
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/collapse.js"></script>  
         
+        <!-- Add fancyBox -->
+        <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox.js"></script>
+        
+        
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#manoCelular").fadeIn(2000);
             });
+            
+            $(".fancybox").fancybox();
+            
         </script>
 
     </body>

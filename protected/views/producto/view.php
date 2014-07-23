@@ -1,7 +1,7 @@
 <div id="caracteristicas" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
         <div class="thumbnail">
-            <img src="<?php echo $model->imagen(); ?>" />
+            <a class="fancybox" href="<?php echo $model->imagen(); ?>"><img src="<?php echo $model->imagen(); ?>" /></a>
         </div>
     </div>
     <h3 style="margin-bottom: 0px;"><?php echo $model->nombre; ?></h3>
@@ -11,12 +11,8 @@
     <p>Talla: <?php echo $model->talla;?></p>
     <p>Stock: <?php echo $model->cantidad;?></p>
     
-    
-    
-    
-    
-    <div class="form">
 
+    <div class="form">
     <?php 
     $auth=Yii::app()->authManager;
     if($auth->checkAccess('carro',Yii::app()->user->id)){
