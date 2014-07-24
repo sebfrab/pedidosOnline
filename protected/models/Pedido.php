@@ -135,7 +135,6 @@ class Pedido extends CActiveRecord
                         $name='=?UTF-8?B?'.base64_encode($model->name).'?=';
 			$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
 			$headers="From: $name <{$model->email}>\r\n".
-					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
 

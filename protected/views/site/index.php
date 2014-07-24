@@ -7,7 +7,7 @@
             <p style="text-align: center;"><a href="<?php echo Yii::app()->createUrl('/site/login'); ?>" class="btn btn-danger btn-lg">INGRESAR</a></p>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <img id="manoCelular" class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/mano_celular.png" />
+            <img id="manoCelular" class="img-responsive" alt="mano_celular" src="<?php echo Yii::app()->request->baseUrl; ?>/images/mano_celular.png" />
         </div>
     </div>
 </div>
@@ -17,19 +17,19 @@
     <div class="row">
         <h1 style="text-align: center; margin-bottom: 50px;">CÓMO TE AYUDA</h1>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/esperando.jpg" alt="" class="img-responsive img-circle center-block" />
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/esperando.jpg" alt="menos_tiempo_de_espera" class="img-responsive img-circle center-block" />
             <br/>
             <p style="text-align: center">Menos tiempo de espera por tu producto</p>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/pasos.jpg" alt="" class="img-responsive img-circle center-block" />
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/pasos.jpg" alt="lo_pides_retiras_pagas" class="img-responsive img-circle center-block" />
             <br/>
             <p style="text-align: center">Lo pides, lo retiras y pagas</p>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/tiempo.jpg" alt="" class="img-responsive img-circle center-block" />
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/tiempo.jpg" alt="mas_tiempo_para_ti" class="img-responsive img-circle center-block" />
             <br/>
-            <p style="text-align: center">Más tiempo para ti, menos tiempo de ocio</p>
+            <p style="text-align: center">Más tiempo para ti, menos tiempo de "nada"</p>
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-            <a target="_blank" href="http://admision.escuelanaval.cl"><img class="img-responsive center-block" src="<?php echo Yii::app()->request->baseUrl; ?>/images/admision.png"/></a>
+            <a target="_blank" href="http://admision.escuelanaval.cl"><img alt="admisión" class="img-responsive center-block" src="<?php echo Yii::app()->request->baseUrl; ?>/images/admision.png"/></a>
         </div>
         <div class="col-lg-4"></div>
     </div>
@@ -124,13 +124,11 @@
 
                     <?php $this->endWidget(); ?>
 
-                    </div><!-- form -->
+         </div><!-- form -->
 
-                    <?php endif; ?>
-                    
-                    
-            </div>
-            </div>
+                    <?php endif; ?>  
+         </div>
+         </div>
 </div>
         
         

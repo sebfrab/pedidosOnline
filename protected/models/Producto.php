@@ -105,7 +105,6 @@ class Producto extends CActiveRecord
 		$criteria->compare('talla',$this->talla,true);
 		$criteria->compare('precio',$this->precio,true);
 		$criteria->compare('cantidad',$this->cantidad,true);
-                $criteria->compare('cantidad',$this->cantidad,true);
                 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -147,22 +146,10 @@ class Producto extends CActiveRecord
         }
         
         public function imagen(){
-            
             if($this->img){
                 return Yii::app()->request->baseUrl."/images/productos/$this->img";
             }else{
                 return Yii::app()->request->baseUrl."/images/image-not-found.jpg";
             }
-            
-            
-            
-            
-            /*
-             * if (file_exists($urlImage)){
-                $urlImage = Yii::app()->request->baseUrl."/images/productos/$this->img";
-                
-            }
-             * 
-             */
         }
 }

@@ -12643,3 +12643,107 @@ REQUEST_URI=/pedidosOnline/pedido/list
 in C:\xampp\htdocs\pedidosOnline\protected\models\Pedido.php (88)
 in C:\xampp\htdocs\pedidosOnline\protected\views\pedido\list.php (18)
 in C:\xampp\htdocs\pedidosOnline\protected\controllers\PedidoController.php (199)
+2014/07/24 11:30:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "search" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('search')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/index/1
+---
+2014/07/24 11:30:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "search" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('search')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search
+HTTP_REFERER=http://localhost/pedidosOnline/producto/create
+---
+2014/07/24 11:30:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "search" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('search')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/search
+---
+2014/07/24 11:31:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "search" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('search')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/search
+---
+2014/07/24 11:31:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "search" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('search')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search?search=asd
+HTTP_REFERER=http://localhost/pedidosOnline/listProductos/search
+---
+2014/07/24 11:31:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "search" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('search')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search?search=asd
+HTTP_REFERER=http://localhost/pedidosOnline/pedido/create
+---
+2014/07/24 11:36:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('search')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('listProductos/s...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/pedidosOnline/listProductos/search?search=asd
+HTTP_REFERER=http://localhost/pedidosOnline/
+---
+2014/07/24 16:43:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Producto no existe o no se encuentra disponible.' in C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php:296
+Stack trace:
+#0 C:\xampp\htdocs\pedidosOnline\protected\controllers\ProductoController.php(51): ProductoController->loadModel('941')
+#1 [internal function]: ProductoController->actionView('941')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductoController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/view')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\pedidosOnline\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/pedidosOnline/producto/941
+---

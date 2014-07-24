@@ -252,14 +252,15 @@ class ProductoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Producto('search');
+		/*$model=new Producto('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Producto']))
 			$model->attributes=$_GET['Producto'];
 
 		$this->render('admin',array(
 			'model'=>$model,
-		));
+		));*/
+                $this->redirect(array('admin'));
 	}
 
 	/**

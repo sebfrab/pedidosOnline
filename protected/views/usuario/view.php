@@ -42,8 +42,8 @@ $this->menu=array(
             <?php if($data->type==1) echo "Tarea"; ?>
             <?php if($data->type==2) echo "Operación"; ?>
         </td>
-        <td><?php echo CHtml::link($enabled?"Off":"On",array("usuario/assign", "id"=>$model->idusuario, "item"=>$data->name),
-                                    array("class"=>$enabled?'btn btn-default':'btn btn-primary'));?></td>
+        <td><?php echo CHtml::link($enabled?"On":"Off",array("usuario/assign", "id"=>$model->idusuario, "item"=>$data->name),
+                                    array("class"=>$enabled?'btn btn-primary':'btn btn-default'));?></td>
         </tr>   
     <?php endforeach; ?>
       

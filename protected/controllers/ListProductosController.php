@@ -28,7 +28,7 @@ class ListProductosController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index'),
+				'actions'=>array('index', 'search'),
 				'expression'=>'Yii::app()->user->checkAccess("lista_productos")',
 			),
 			array('deny',  // deny all users
@@ -57,6 +57,28 @@ class ListProductosController extends Controller
 		));
 	}
 
+        
+        public function actionSearch()
+	{
+            $this->layout='//layouts/column2';
+                $Criteria = new CDbCriteria();
+		if(isset($_GET['search'])){
+                    $Criteria->compare('idproducto',$_GET['search'],true, 'OR');
+                    $Criteria->compare('nombre',$_GET['search'],true, 'OR');
+                    $Criteria->compare('descripcion',$_GET['search'],true, 'OR');
+                    $Criteria->compare('marca',$_GET['search'],true, 'OR');
+                    $Criteria->compare('talla',$_GET['search'],true, 'OR');
+                    $Criteria->compare('cantidad',$_GET['search'],true, 'OR');
+                    $Criteria->compare('ROUND(precio*1.05)',$_GET['search'],true, 'OR');
+                }
+                $model = Producto::model()->findAll($Criteria);
+			
+		$this->render('search',array(
+                        'model'=>$model,
+                        'busqueda'=>$_GET['search'],
+		));
+	}
+        
 	public function loadModel($id)
 	{
                 if($id>2){

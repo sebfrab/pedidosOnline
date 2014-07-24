@@ -127,7 +127,7 @@ class SiteController extends Controller
         
         public function actionSupport()
 	{
-                $this->layout='//layouts/column2';
+                $this->layout='//layouts/column1';
 		$this->render('support');
 	}
         

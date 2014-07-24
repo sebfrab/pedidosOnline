@@ -7,7 +7,7 @@
         <meta name="language" content="es" />
         <meta name="author" content="Sebastian Franco Brantes UTFSM - ¿y por qué no? - seb.frab@gmail.com"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="Keywords" content="pedidos, venta, onlines, escuela naval, cadete, armada, chile"/>
+        <meta name="Keywords" content="pedidos, venta, online, escuela naval, cadete, armada, chile"/>
         <meta name="description" content="Sistema de pedidos online, para cadetes de la Escuela Naval Arturo Prat" />
         <meta name="language" content="es" />
         <meta http-equiv="X-UA-Compatible" content="IE=7,8,9" />  
@@ -69,6 +69,7 @@
                                                 array('label'=>'VESTIMENTA', 'url'=>array('/listProductos/index/1'), 'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
                                                 array('label'=>'CALZADO', 'url'=>array('/listProductos/index/2'), 'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
                                                 array('label'=>'OTROS', 'url'=>array('/listProductos/index/3'), 'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
+                                                array('label'=>'AYUDA', 'url'=>array('/site/support'),'visible'=>Yii::app()->user->isGuest),
                                                 array('label'=>'CONTACTO', 'url'=>array('/site/index#contacto'),'visible'=>Yii::app()->user->isGuest),
                                         ),
                                 )); ?>
@@ -80,6 +81,18 @@
                                 }
                                 ?>
                                 
+                                <?php
+                                if($auth->checkAccess('lista_productos',Yii::app()->user->id)){
+                                ?>
+                                <form style="margin-right: 0px; padding-right: 0px; padding-left: 0px;" class="navbar-form navbar-left" role="search" method="get" action="<?php echo Yii::app()->createUrl('listProductos/search'); ?>">
+                                    <div class="form-group">
+                                        <input id="search" type="text" name="search" class="form-control" placeholder="Buscar"/>
+                                    </div>
+                                </form>
+                                <?php
+                                }
+                                ?>
+
                                 <?php $this->widget('zii.widgets.CMenu',array(
                                         'htmlOptions' => array(
                                             'class'=>'nav navbar-nav navbar-right',
@@ -116,6 +129,7 @@
                                                     'items'=>array(
                                                         array('label'=>'Pedidos', 'url'=>array('pedido/list'),'visible'=>$auth->checkAccess('pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Cambio de Contraseña', 'url'=>array('/usuario/changepassword/'.Yii::app()->user->id)),
+                                                        array('label'=>'Ayuda', 'url'=>array('/site/support')),
                                                         array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
                                                     ),                                                    
                                                     'visible'=>!Yii::app()->user->isGuest),
@@ -137,8 +151,8 @@
             <div style=" background-color: #232323; height: 130px; padding-top:30px;"  class="container-fluid">
                 <p style="text-align: center; color: #9b9b9c;">&#169;2014 Escuela Naval "Arturo Prat"</p>
                 <ul style="width:100px; margin:0px auto;" class="nav nav-pills nav-justified" id="redesSociales">
-                    <li><a target="_blank" href="http://www.facebook.com/EscuelaNavalChile" title="facebook"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/facebook.png" /></a></li>
-                    <li><a target="_blank" href="http://twitter.com/#!/Armada_Chile" title="twitter"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/twitter.png" /></a></li>
+                    <li><a target="_blank" href="http://www.facebook.com/EscuelaNavalChile" title="facebook"><img alt="facebook" src="<?php echo Yii::app()->request->baseUrl; ?>/images/facebook.png" /></a></li>
+                    <li><a target="_blank" href="http://twitter.com/#!/Armada_Chile" title="twitter"><img alt="twitter" src="<?php echo Yii::app()->request->baseUrl; ?>/images/twitter.png" /></a></li>
                 </ul>
             </div>
         </footer>   
