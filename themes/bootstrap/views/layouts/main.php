@@ -21,6 +21,16 @@
         <!-- Add fancyBox -->
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
         
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-53199117-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -43,7 +53,7 @@
     <body>
         <header>
             <nav role="navigation">
-                <div id="menu" class="navbar navbar-fixed-top">
+                <div class="menu navbar navbar-fixed-top">
                     <div class="navbar-default navbar-collapse">
                         <div class="container">
                             <div class="navbar-header">
@@ -59,8 +69,7 @@
                                 
                                 <?php $this->widget('zii.widgets.CMenu',array(
                                         'htmlOptions' => array(
-                                            'class'=>'nav navbar-nav navbar',
-                                            'id'=>'menu',
+                                            'class'=>'menu nav navbar-nav navbar',
                                         ),
                                         'submenuHtmlOptions' => array(
                                             'class'=>'dropdown-menu', 
@@ -95,8 +104,7 @@
 
                                 <?php $this->widget('zii.widgets.CMenu',array(
                                         'htmlOptions' => array(
-                                            'class'=>'nav navbar-nav navbar-right',
-                                            'id'=>'menu',
+                                            'class'=>'menu nav navbar-nav navbar-right',
                                         ),
                                         'submenuHtmlOptions' => array(
                                             'class'=>'dropdown-menu', 

@@ -17,7 +17,7 @@ body > .container {
     background-image: url('../images/jumbotron.jpg');
 }
 
-#menu{
+.menu{
     min-height: 55px; 
 }
             
