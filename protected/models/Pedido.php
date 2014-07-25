@@ -129,7 +129,7 @@ class Pedido extends CActiveRecord
                     $model->email = $usuario->email;
                     $model->name = $usuario->nombreCompleto;
                     $model->subject = "Retiro de productos";
-                    $model->body = "Pedido #$this->idpedido de encuentra listo para ser retirado";
+                    $model->body = "Pedido #$this->idpedido se encuentra listo para ser retirado";
                     
                     if($model->validate())
                     {
