@@ -131,15 +131,17 @@ class Pedido extends CActiveRecord
                     $model->subject = "Retiro de productos";
                     $model->body = "Pedido #$this->idpedido de encuentra listo para ser retirado";
                     
-                    if($model->validate()){
-                        $name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-			$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-			$headers="From: $name <{$model->email}>\r\n".
+                    if($model->validate())
+                    {
+				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
+				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
+				$headers="From: $name <{".Yii::app()->params['adminEmail']."}>\r\n".
+					"Reply-To: {".Yii::app()->params['adminEmail']."}\r\n".
 					"MIME-Version: 1.0\r\n".
 					"Content-Type: text/plain; charset=UTF-8";
 
-			mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-                    }  
+				mail($model->email,$subject,$model->body,$headers);
+                    } 
                 }
             }
         }
