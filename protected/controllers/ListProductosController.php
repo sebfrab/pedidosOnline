@@ -70,6 +70,8 @@ class ListProductosController extends Controller
                     $Criteria->compare('talla',$_GET['search'],true, 'OR');
                     $Criteria->compare('cantidad',$_GET['search'],true, 'OR');
                     $Criteria->compare('ROUND(precio*1.05)',$_GET['search'],true, 'OR');
+                    $Criteria->compare('estado_idestado',1,true);
+                    
                 }
                 $model = Producto::model()->findAll($Criteria);
 			
@@ -84,13 +86,13 @@ class ListProductosController extends Controller
                 if($id>2){
                     $Criteria = new CDbCriteria();
                     $Criteria->with = array('subcategoria');
-                    $Criteria->condition = "categoria_idcategoria > 2";
+                    $Criteria->condition = "categoria_idcategoria > 2 and estado_idestado=1";
                     //$Criteria->condition = "estado_idestado = 1";
                     $model = Producto::model()->findAll($Criteria);
                 }else{
                     $Criteria = new CDbCriteria();
                     $Criteria->with = array('subcategoria');
-                    $Criteria->condition = "categoria_idcategoria = $id";
+                    $Criteria->condition = "categoria_idcategoria = $id and estado_idestado=1";
                     //$Criteria->condition = "estado_idestado = 1";
                     $model = Producto::model()->findAll($Criteria);
                 }
