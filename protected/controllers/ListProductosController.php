@@ -48,10 +48,14 @@ class ListProductosController extends Controller
             $Criteria = new CDbCriteria();
             $Criteria->condition = "idsubcategoria  = $id";
             $model = Subcategoria::model()->findByPk($id);
-
+            $titulo = "";
+            if($model){
+                $titulo = $model->nombre;
+            }
+            
 		$this->render('index',array(
 			'model'=>$this->loadModel($id),
-                        'titulo' => $model->nombre,
+                        'titulo' => $titulo,
 		));
 	}
 
