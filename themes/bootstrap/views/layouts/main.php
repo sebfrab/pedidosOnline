@@ -82,7 +82,7 @@
                                                             'data-toggle'=>'dropdown',
                                                         ),
                                                         'items'=>array(
-                                                            array('label'=>'Gorra', 'url'=>array('/listProductos/index/0')),
+                                                            array('label'=>'Gorra', 'url'=>array('/listProductos/index/1')),
                                                             array('label'=>'Tenida 14-Alfa', 'url'=>array('/listProductos/index/2')),
                                                             array('label'=>'Tenida de Parada', 'url'=>array('/listProductos/index/3')),
                                                             array('label'=>'Tenida de Servicio', 'url'=>array('/listProductos/index/4')),
