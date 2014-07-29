@@ -44,16 +44,14 @@ class ListProductosController extends Controller
 	public function actionIndex($id)
 	{
             $this->layout='//layouts/column2';
-            if($id==1){
-                $titulo = 'Vestimenta';
-            }elseif($id==2){
-                $titulo = 'Calzado';
-            }else{
-                $titulo = 'Otros';
-            }
+            
+            $Criteria = new CDbCriteria();
+            $Criteria->condition = "idsubcategoria  = $id";
+            $model = Subcategoria::model()->findByPk($id);
+
 		$this->render('index',array(
 			'model'=>$this->loadModel($id),
-                        'titulo' => $titulo,
+                        'titulo' => $model->nombre,
 		));
 	}
 
@@ -83,19 +81,24 @@ class ListProductosController extends Controller
         
 	public function loadModel($id)
 	{
-                if($id>2){
+                /*if($id>2){
                     $Criteria = new CDbCriteria();
                     $Criteria->with = array('subcategoria');
-                    $Criteria->condition = "categoria_idcategoria > 2 and estado_idestado=1";
+                    $Criteria->condition = "subcategoria_idsubcategoria  > 2 and estado_idestado=1";
                     //$Criteria->condition = "estado_idestado = 1";
                     $model = Producto::model()->findAll($Criteria);
                 }else{
                     $Criteria = new CDbCriteria();
                     $Criteria->with = array('subcategoria');
-                    $Criteria->condition = "categoria_idcategoria = $id and estado_idestado=1";
+                    $Criteria->condition = "subcategoria_idsubcategoria  = $id and estado_idestado=1";
                     //$Criteria->condition = "estado_idestado = 1";
                     $model = Producto::model()->findAll($Criteria);
-                }
+                }*/
+            
+                $Criteria = new CDbCriteria();
+                $Criteria->condition = "subcategoria_idsubcategoria  = $id and estado_idestado=1";
+                //$Criteria->condition = "estado_idestado = 1";
+                $model = Producto::model()->findAll($Criteria);
 
 		//$model= Producto::model()->findByPk($id);
 		if($model===null)

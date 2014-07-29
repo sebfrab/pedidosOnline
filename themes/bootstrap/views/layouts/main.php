@@ -75,12 +75,53 @@
                                             'class'=>'dropdown-menu', 
                                         ),
                                         'items'=>array(
-                                                array('label'=>'VESTIMENTA', 'url'=>array('/listProductos/index/1'), 'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
-                                                array('label'=>'CALZADO', 'url'=>array('/listProductos/index/2'), 'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
-                                                array('label'=>'OTROS', 'url'=>array('/listProductos/index/3'), 'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
+                                            
+                                                 array('label'=>'TENIDAS / UNIFORMES <b class="caret"></b>', 'url'=>'#', 
+                                                        'linkOptions'=>array(
+                                                            'class'=>'dropdown-toggle',
+                                                            'data-toggle'=>'dropdown',
+                                                        ),
+                                                        'items'=>array(
+                                                            array('label'=>'Gorra', 'url'=>array('/listProductos/index/0')),
+                                                            array('label'=>'Tenida 14-Alfa', 'url'=>array('/listProductos/index/2')),
+                                                            array('label'=>'Tenida de Parada', 'url'=>array('/listProductos/index/0')),
+                                                            array('label'=>'Tenida de Servicio', 'url'=>array('/listProductos/index/0')),
+                                                            array('label'=>'Tenida Desfile', 'url'=>array('/listProductos/index/0')),
+                                                        ),                                                    
+                                                    'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
+                                            
+                                                  array('label'=>'ROPAS VARIAS <b class="caret"></b>', 'url'=>'#', 
+                                                        'linkOptions'=>array(
+                                                            'class'=>'dropdown-toggle',
+                                                            'data-toggle'=>'dropdown',
+                                                        ),
+                                                        'items'=>array(
+                                                            array('label'=>'Calzado', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Pijamas y Baño', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Ropa de Cama', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Ropa Deportiva', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Ropa de Trabajo', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Ropa Diaria', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Ropa Interior', 'url'=>array('pedido/list')),
+                                                        ),                                                    
+                                                    'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
+                                            
+                                                  array('label'=>'OTROS <b class="caret"></b>', 'url'=>'#', 
+                                                        'linkOptions'=>array(
+                                                            'class'=>'dropdown-toggle',
+                                                            'data-toggle'=>'dropdown',
+                                                        ),
+                                                        'items'=>array(
+                                                            array('label'=>'Accesorios', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Artículos de Aseo', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Artículos de Escritorio', 'url'=>array('pedido/list')),
+                                                            array('label'=>'Maquillaje', 'url'=>array('pedido/list')),
+                                                        ),                                                    
+                                                    'visible'=>$auth->checkAccess('lista_productos',Yii::app()->user->id)),
                                                 array('label'=>'AYUDA', 'url'=>array('/site/support'),'visible'=>Yii::app()->user->isGuest),
                                                 array('label'=>'CONTACTO', 'url'=>array('/site/index#contacto'),'visible'=>Yii::app()->user->isGuest),
                                         ),
+                                        'encodeLabel' => false,
                                 )); ?>
                                 
                                 <?php
