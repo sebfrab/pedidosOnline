@@ -89,8 +89,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=pedidos_online',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'suits',
+			'password' => 'cSfB6x',
 			'charset' => 'utf8',
 		),
 		
@@ -112,16 +112,7 @@ return array(
 				),
 				*/
 			),
-		),
-                'Smtpmail'=>array(
-                    'class'=>'application.extensions.smtpmail.PHPMailer',
-                    'Host'=>"webmail.escuelanaval.cl",
-                    'Username'=>'pedidosonline@escuelanaval.cl',
-                    'Password'=>'umukfm',
-                    'Mailer'=>'smtp',
-                    'Port'=>26,
-                    'SMTPAuth'=>true, 
-                ),
+		),                
 	),
 
 	// application-level parameters that can be accessed

@@ -129,16 +129,20 @@ class Pedido extends CActiveRecord
         protected function afterSave() {
             parent::afterSave();
             if (!$this->isNewRecord) {
-                if($this->idpedido==3){
-                    $usuario = Usuario::model()->findByPk(Yii::app()->user->id);
+                if($this->estado_idestado ==3){
+                    $usuario = Usuario::model()->findByPk($this->usuario_idusuario);
                     if($usuario->email){
-                        $mail=Yii::app()->Smtpmail;
-                        $mail->SetFrom(Yii::app()->params['adminEmail'], 'From NAme');
-                        $mail->Subject    = "Retiro de productos";
-                        $mail->MsgHTML("Pedido #$this->idpedido se encuentra listo para ser retirado");
-                        $mail->AddAddress($usuario->email, "");
-                        $mail->Send();
+                        $body = "Pedido #$this->idpedido se encuentra listo para ser retirado.";
+                        $name='=?UTF-8?B?'.base64_encode('Pedidos Online').'?=';
+                        $subject='=?UTF-8?B?'.base64_encode('Pedido Ok').'?=';
+                        $headers="From: $name <{".Yii::app()->params['adminEmail']."}>\r\n".
+                                    "Reply-To: {".Yii::app()->params['adminEmail']."}\r\n".
+                                    "MIME-Version: 1.0\r\n".
+                                    "Content-Type: text/plain; charset=UTF-8";
+
+                        mail($usuario->email,$subject,$body,$headers);    
                     }
+                    
                 }
             }
         }
