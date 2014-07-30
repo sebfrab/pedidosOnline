@@ -138,7 +138,7 @@ class Pedido extends CActiveRecord
                     $model->subject = "Retiro de productos";
                     $model->body = "Pedido #$this->idpedido se encuentra listo para ser retirado";
                     
-                    if($model->validate())
+                    if($model->email)
                     {
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
 				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
