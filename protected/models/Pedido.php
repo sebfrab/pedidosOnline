@@ -129,6 +129,7 @@ class Pedido extends CActiveRecord
         protected function afterSave() {
             parent::afterSave();
             if (!$this->isNewRecord) {
+                $usuario = Usuario::model()->findByPk(Yii::app()->user->id);
                 $model->email = $usuario->email;
                     $model->name = $usuario->nombreCompleto;
                     $model->subject = "Retiro de productos";
