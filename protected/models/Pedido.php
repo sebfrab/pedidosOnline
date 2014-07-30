@@ -119,6 +119,13 @@ class Pedido extends CActiveRecord
             return $newDate = date("d-m-Y", strtotime($this->fecha_pedido));
         }
         
+        function beforeSave(){
+            if($this->estado_idestado==4){
+                $this->fecha_entrega = date("Y-m-d H:i:s");
+            }
+            return parent::beforeSave();
+        }
+        
         protected function afterSave() {
             parent::afterSave();
             if (!$this->isNewRecord) {

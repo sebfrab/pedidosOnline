@@ -98,7 +98,7 @@ class Estado extends CActiveRecord
         
         public static function getListEstadosPedido(){
             $criteria = new CDbCriteria;  
-            $criteria->addCondition('idestado IN (2, 3, 4)');
+            $criteria->addCondition('idestado IN (2, 3, 4, 5)');
             return CHtml::listData(Estado::model()->findAll($criteria),'idestado','nombre');
         }
         
