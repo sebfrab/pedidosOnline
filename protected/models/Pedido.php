@@ -134,7 +134,7 @@ class Pedido extends CActiveRecord
                     if($usuario->email){
                         $body = "Pedido #$this->idpedido se encuentra listo para ser retirado.";
                         $name='=?UTF-8?B?'.base64_encode('Pedidos Online').'?=';
-                        $subject='=?UTF-8?B?'.base64_encode('Pedido Ok').'?=';
+                        $subject='=?UTF-8?B?'.base64_encode("Pedido Ok #$this->idpedido").'?=';
                         $headers="From: $name <{".Yii::app()->params['adminEmail']."}>\r\n".
                                     "Reply-To: {".Yii::app()->params['adminEmail']."}\r\n".
                                     "MIME-Version: 1.0\r\n".
