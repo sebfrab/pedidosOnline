@@ -189,7 +189,7 @@ class CarroController extends Controller
                 if($sw == 1){
                     $pedido = new Pedido();
                     $pedido->usuario_idusuario = Yii::app()->user->id;
-                    $pedido->fecha_pedido = date("d/m/y H:i:s");
+                    $pedido->fecha_pedido = date("Y-m-d H:i:s");
                     $pedido->estado_idestado = 2;
                     if($pedido->save()){
                         foreach($model as $item){

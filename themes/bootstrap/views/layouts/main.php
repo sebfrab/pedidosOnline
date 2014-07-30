@@ -194,7 +194,7 @@
         </header>
         
 	<?php echo $content; ?>
-        
+
         <br/><br/>
         <footer class="footer">
             <div style=" background-color: #232323; height: 130px; padding-top:30px;"  class="container-fluid">
