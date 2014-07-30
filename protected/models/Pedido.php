@@ -129,43 +129,16 @@ class Pedido extends CActiveRecord
         protected function afterSave() {
             parent::afterSave();
             if (!$this->isNewRecord) {
-                $usuario = Usuario::model()->findByPk(Yii::app()->user->id);
-                $model->email = $usuario->email;
-                    $model->name = $usuario->nombreCompleto;
-                    $model->subject = "Retiro de productos";
-                    $model->body = "Pedido #$this->idpedido se encuentra listo para ser retirado";
-                    
-                    if($model->email)
-                    {
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{".Yii::app()->params['adminEmail']."}>\r\n".
-					"Reply-To: {".Yii::app()->params['adminEmail']."}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail($model->email,$subject,$model->body,$headers);
-                    } 
                 if($this->idpedido==3){
                     $usuario = Usuario::model()->findByPk(Yii::app()->user->id);
-                    $model=new ContactForm;
-                    
-                    $model->email = $usuario->email;
-                    $model->name = $usuario->nombreCompleto;
-                    $model->subject = "Retiro de productos";
-                    $model->body = "Pedido #$this->idpedido se encuentra listo para ser retirado";
-                    
-                    if($model->email)
-                    {
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{".Yii::app()->params['adminEmail']."}>\r\n".
-					"Reply-To: {".Yii::app()->params['adminEmail']."}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail($model->email,$subject,$model->body,$headers);
-                    } 
+                    if($usuario->email){
+                        $mail=Yii::app()->Smtpmail;
+                        $mail->SetFrom(Yii::app()->params['adminEmail'], 'From NAme');
+                        $mail->Subject    = "Retiro de productos";
+                        $mail->MsgHTML("Pedido #$this->idpedido se encuentra listo para ser retirado");
+                        $mail->AddAddress($usuario->email, "");
+                        $mail->Send();
+                    }
                 }
             }
         }

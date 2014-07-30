@@ -113,6 +113,15 @@ return array(
 				*/
 			),
 		),
+                'Smtpmail'=>array(
+                    'class'=>'application.extensions.smtpmail.PHPMailer',
+                    'Host'=>"webmail.escuelanaval.cl",
+                    'Username'=>'pedidosonline@escuelanaval.cl',
+                    'Password'=>'umukfm',
+                    'Mailer'=>'smtp',
+                    'Port'=>26,
+                    'SMTPAuth'=>true, 
+                ),
 	),
 
 	// application-level parameters that can be accessed
