@@ -9,6 +9,7 @@
  * @property string $usuario_idusuario
  * @property string $fecha_pedido
  * @property string $fecha_entrega
+ * @property string $comentario
  */
 class Pedido extends CActiveRecord
 {
@@ -30,10 +31,10 @@ class Pedido extends CActiveRecord
 		return array(
 			array('estado_idestado, usuario_idusuario, fecha_pedido', 'required'),
 			array('estado_idestado, usuario_idusuario', 'length', 'max'=>10),
-			array('fecha_entrega', 'safe'),
+			array('fecha_entrega, comentario', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idpedido, estado_idestado, usuario_idusuario, fecha_pedido, fecha_entrega', 'safe', 'on'=>'search'),
+			array('idpedido, estado_idestado, usuario_idusuario, fecha_pedido, fecha_entrega, comentario', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +63,7 @@ class Pedido extends CActiveRecord
 			'usuario_idusuario' => 'Usuario Idusuario',
 			'fecha_pedido' => 'Fecha Pedido',
 			'fecha_entrega' => 'Fecha Entrega',
+                        'comentario' => 'Comentario',
 		);
 	}
 

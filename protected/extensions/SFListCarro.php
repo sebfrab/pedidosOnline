@@ -107,13 +107,16 @@ class SFListCarro extends CWidget{
             $suma += $item->cantidad * round($item->producto->precio*1.05);
         }
         $total = number_format($suma,0,",",".");
-        echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
-        echo "<p style=\"font-size:18px;\" class=\"precio\">Total $$total</p>";
+        
+        echo "<div style=\"margin-top:20px;\" class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
+        echo "<form class=\"\" role=\"form\" action=\"".Yii::app()->createUrl('carro/realizarPedido')."\" method=\"post\">";
+        
+        echo "<div class=\"form-group\">";
+        echo "<textarea rows=\"3\" cols=\"50\" class=\"form-control\" name=\"Pedido[comentario]\" placeholder=\"Comentario\" id=\"Pedido_comentario\"></textarea>";
         echo "</div>";
         
-        
-        echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
-        echo "<form class=\"\" role=\"form\" action=\"".Yii::app()->createUrl('carro/realizarPedido')."\" method=\"post\">";
+        echo "<p style=\"font-size:18px;\" class=\"precio\">Total $$total</p>";
+
         echo "<input class=\"btn btn-primary pull-right\" type=\"submit\" value=\"hacer pedido\" />";
         echo "</form>";
         echo "</div>";

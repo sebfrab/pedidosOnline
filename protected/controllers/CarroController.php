@@ -173,6 +173,7 @@ class CarroController extends Controller
         
         public function actionRealizarPedido()
 	{
+            $comentario = $_POST["Pedido"]['comentario'];
             $criteria = new CDbCriteria;  
             $criteria->addCondition('usuario_idusuario = '.Yii::app()->user->id);
             $model = Carro::model()->findAll($criteria);
@@ -191,6 +192,7 @@ class CarroController extends Controller
                     $pedido->usuario_idusuario = Yii::app()->user->id;
                     $pedido->fecha_pedido = date("Y-m-d H:i:s");
                     $pedido->estado_idestado = 2;
+                    $pedido->comentario = $comentario;
                     if($pedido->save()){
                         foreach($model as $item){
                             $producto = Producto::model()->findByPk($item->producto_idproducto);

@@ -4,6 +4,7 @@
 <p>R.U.N.:<?php echo $model->usuario->username ?></p>
 <p>Nombre : <?php echo $model->usuario->nombrecompleto?></p>
 <p>Fecha pedido : <?php echo $model->FechaPedido?></p>
+<p style="text-align: justify">Comentario : <?php echo nl2br($model->comentario);?></p>
 
 <?php 
 $auth=Yii::app()->authManager;

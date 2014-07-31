@@ -1,6 +1,17 @@
 
 <h3>Carro</h3>
 
+<style>
+    #Pedido_comentario::-webkit-input-placeholder{
+    color:transparent;
+    }
+
+    #Pedido_comentario::-webkit-input-placeholder::before {
+        color:#666;
+        content:"Line 1\A Line 2\A Line 3\A";
+    }
+</style>
+
  <?php 
         $this->widget('ext.SFListCarro',array(
            'model'=>$model,
