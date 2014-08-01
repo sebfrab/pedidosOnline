@@ -8,7 +8,7 @@
 
     #Pedido_comentario::-webkit-input-placeholder::before {
         color:#666;
-        content:"Line 1\A Line 2\A Line 3\A";
+        content:"Comentario";
     }
 </style>
 
