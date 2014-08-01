@@ -77,8 +77,8 @@ if($auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id) || $tipoUsuario
     ?>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="thumbnail col-lg-3 col-md-3 col-sm-6 col-xs-4">
-                <a class="fancybox" href="<?php echo $model->imagen(); ?>">
-                    <img src="<?php echo $model->imagenThumbs(); ?>"  alt="<?php echo $det->producto->nombre; ?>">
+                <a class="fancybox" href="<?php echo $det->producto->imagen(); ?>">
+                    <img src="<?php echo $det->producto->imagenThumbs(); ?>"  alt="<?php echo $det->producto->nombre; ?>">
                 </a>
             </div>
             
