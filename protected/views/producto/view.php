@@ -1,7 +1,7 @@
 <div id="caracteristicas" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
         <div class="thumbnail">
-            <a class="fancybox" href="<?php echo $model->imagen(); ?>"><img src="<?php echo $model->imagen(); ?>" /></a>
+            <a class="fancybox" href="<?php echo $model->imagen(); ?>"><img src="<?php echo $model->imagenThumbs(); ?>" /></a>
         </div>
     </div>
     <h3 style="margin-bottom: 0px;"><?php echo $model->nombre; ?></h3>

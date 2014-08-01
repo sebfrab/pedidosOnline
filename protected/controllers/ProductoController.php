@@ -126,6 +126,7 @@ class ProductoController extends Controller
                         
                         ////////////////////////////////////////////////////////////////////
                         $path_picture = "images/productos/";
+                        $path_picture_thumbs = "images/productos/thumbs/";
                         $rnd = rand(0,9999);
                         $rnd = "pedidosOnline".$rnd;
                         $uploadedFile=CUploadedFile::getInstance($model,'img');
@@ -134,6 +135,14 @@ class ProductoController extends Controller
                         if(!empty($uploadedFile)){
                             $uploadedFile->saveAs($path_picture.$fileName);
                             $model->img= $fileName;
+                            
+                            copy($path_picture.$fileName,$path_picture_thumbs.$fileName);
+                                    
+                            $file=$path_picture_thumbs.$fileName;
+                            $img = Yii::app()->simpleImage->load($file);
+                            $img->resizeToWidth(250);
+                            $img->save($path_picture_thumbs.$fileName);
+                            
                         }
                         ////////////////////////////////////////////////////////////////////
                         
@@ -176,6 +185,7 @@ class ProductoController extends Controller
                     
                     ////////////////////////////////////////////////////////////////////
                     $path_picture = "images/productos/";
+                    $path_picture_thumbs = "images/productos/thumbs/";
                     $rnd = rand(0,9999);
                     $rnd = "pedidosOnline".$rnd;
                     $uploadedFile=CUploadedFile::getInstance($model,'img');
@@ -184,6 +194,13 @@ class ProductoController extends Controller
                     if(!empty($uploadedFile)){
                         $uploadedFile->saveAs($path_picture.$fileName);
                         $model->img= $fileName;
+                        
+                        copy($path_picture.$fileName,$path_picture_thumbs.$fileName);
+                                    
+                        $file=$path_picture_thumbs.$fileName;
+                        $img = Yii::app()->simpleImage->load($file);
+                        $img->resizeToWidth(250);
+                        $img->save($path_picture_thumbs.$fileName);
                     }
                     ////////////////////////////////////////////////////////////////////
                     

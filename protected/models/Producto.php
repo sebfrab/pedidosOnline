@@ -152,4 +152,12 @@ class Producto extends CActiveRecord
                 return Yii::app()->request->baseUrl."/images/image-not-found.jpg";
             }
         }
+        
+        public function imagenThumbs(){
+            if($this->img){
+                return Yii::app()->request->baseUrl."/images/productos/thumbs/$this->img";
+            }else{
+                return Yii::app()->request->baseUrl."/images/image-not-found.jpg";
+            }
+        }
 }

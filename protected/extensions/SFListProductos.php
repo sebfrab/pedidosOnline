@@ -10,7 +10,7 @@ class SFListProductos extends CWidget{
             $url = Yii::app()->createUrl("/producto/$item->idproducto");
             echo "<a href=\"$url\">";
             
-            $urlImage = $item->imagen();
+            $urlImage = $item->imagenThumbs();
             
             echo "<div class=\"thumbnail\"><img src=\"$urlImage\"  alt=\"$item->nombre\"></div>";
             $talla = '';
