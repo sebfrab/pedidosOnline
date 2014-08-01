@@ -169,7 +169,7 @@
                                                         array('label'=>'Tipo de usuario', 'url'=>array('/tipoUsuario'),'visible'=>$auth->checkAccess('mantenedor_tipo_usuario',Yii::app()->user->id)),
                                                         array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
                                                     ),                                                    
-                                                    'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_productos',Yii::app()->user->id)),
+                                                    'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
                                                 array('label'=>'<span class="glyphicon glyphicon-cog"></span> Cuenta <b class="caret"></b>', 'url'=>'#', 
                                                     'linkOptions'=>array(
                                                         'class'=>'dropdown-toggle',
@@ -194,7 +194,7 @@
         </header>
         
 	<?php echo $content; ?>
-
+        
         <br/><br/>
         <footer class="footer">
             <div style=" background-color: #232323; height: 130px; padding-top:30px;"  class="container-fluid">
