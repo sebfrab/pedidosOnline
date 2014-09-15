@@ -28,7 +28,7 @@ $this->menu=array(
         'pager' => array(
             'header' => '',
             'hiddenPageCssClass' => 'disabled',
-            'maxButtonCount' => 5,
+            'maxButtonCount' => 10,
             'cssFile' => false,
             'prevPageLabel' => '<i class="icon-chevron-left"><</i>',
             'nextPageLabel' => '<i class="icon-chevron-right">></i>',
