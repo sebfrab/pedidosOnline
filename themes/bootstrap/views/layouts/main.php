@@ -36,6 +36,7 @@
 
     <?php
         $auth=Yii::app()->authManager;
+        //$task=$auth->createTask('view_sugerencia','acceso a la visualizacion de las sugerencias subidas por los usuarios');
         //$task=$auth->createTask('backup','acceso a los backup, realizarlo, eliminarlos y restauración');
         //$task=$auth->createTask('mantenedor_tipo_usuario','acceso total al mantenedor de los tipos de usuario');
         //$task=$auth->createTask('mantenedor_categorias','acceso total al mantenedor de categorias');
@@ -166,6 +167,7 @@
                                                         array('label'=>'Pedidos', 'url'=>array('/pedido'),'visible'=>$auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Producto', 'url'=>array('/producto'),'visible'=>$auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
                                                         array('label'=>'Subcategoria', 'url'=>array('/subcategoria'),'visible'=>$auth->checkAccess('mantenedor_subcategorias',Yii::app()->user->id)),
+                                                        array('label'=>'Sugerencias', 'url'=>array('/sugerencia/admin'),'visible'=>$auth->checkAccess('view_sugerencia',Yii::app()->user->id)),
                                                         array('label'=>'Tipo de usuario', 'url'=>array('/tipoUsuario'),'visible'=>$auth->checkAccess('mantenedor_tipo_usuario',Yii::app()->user->id)),
                                                         array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
                                                     ),                                                    
@@ -178,6 +180,7 @@
                                                     'items'=>array(
                                                         array('label'=>'Pedidos', 'url'=>array('pedido/list'),'visible'=>$auth->checkAccess('pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Cambio de Contraseña', 'url'=>array('/usuario/changepassword/'.Yii::app()->user->id)),
+                                                        array('label'=>'Sugerencias', 'url'=>array('/sugerencia/create/'),'visible'=>!Yii::app()->user->isGuest),
                                                         array('label'=>'Ayuda', 'url'=>array('/site/support')),
                                                         array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
                                                     ),                                                    
