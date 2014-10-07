@@ -51,6 +51,7 @@
                                                 array('label'=>'VESTIMENTA', 'url'=>array('/listProductos/index/1'), 'visible'=>!Yii::app()->user->isGuest),
                                                 array('label'=>'CALZADO', 'url'=>array('/listProductos/index/2'), 'visible'=>!Yii::app()->user->isGuest),
                                                 array('label'=>'OTROS', 'url'=>"#", 'visible'=>!Yii::app()->user->isGuest),
+                                                array('label'=>'AYUDA', 'url'=>array('/site/support'),'visible'=>Yii::app()->user->isGuest),
                                                 array('label'=>'CONTACTO', 'url'=>array('/site/index#contacto'),'visible'=>Yii::app()->user->isGuest),
                                         ),
                                 )); ?>
