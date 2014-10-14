@@ -4,7 +4,13 @@
             <br/><br/>
             <h2 style="text-align: center; color: #fff;">Ahora tu pedido al pañol <b>Online!!!</b></h2>
             <p style="text-align: center; color: #fff;">fácil, rápido y cómodo<br/>aquí tú eres el primero en la fila!!!</p>
+            <?php
+            if(Yii::app()->user->isGuest){
+            ?>
             <p style="text-align: center;"><a href="<?php echo Yii::app()->createUrl('/site/login'); ?>" class="btn btn-danger btn-lg">INGRESAR</a></p>
+            <?php
+            }
+            ?>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <img id="manoCelular" class="img-responsive" alt="mano_celular" src="<?php echo Yii::app()->request->baseUrl; ?>/images/mano_celular.png" />
