@@ -98,6 +98,7 @@ div.flash-success a
 @media (max-width: 767px) {
     .productoNombbre{
         font-size: 10px;
+        height: 30px;
     }
 }
 
