@@ -180,6 +180,7 @@
                                                     'items'=>array(
                                                         array('label'=>'Pedidos', 'url'=>array('pedido/list'),'visible'=>$auth->checkAccess('pedidos',Yii::app()->user->id)),
                                                         array('label'=>'Cambio de Contraseña', 'url'=>array('/usuario/changepassword/'.Yii::app()->user->id)),
+                                                        array('label'=>'¿Qué necesitas?', 'url'=>array('/sugerenciaProductos/listProductos/'),'visible'=>!Yii::app()->user->isGuest),
                                                         array('label'=>'Sugerencias', 'url'=>array('/sugerencia/create/'),'visible'=>!Yii::app()->user->isGuest),
                                                         array('label'=>'Ayuda', 'url'=>array('/site/support')),
                                                         array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
@@ -215,13 +216,16 @@
         <!-- Add fancyBox -->
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox.js"></script>
         
-        
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#manoCelular").fadeIn(2000);
             });
             
             $(".fancybox").fancybox();
+            
+            var $sourceFields = $("#sourceFields");
+            var $destinationFields = $("#destinationFields");
+            var $chooser = $("#fieldChooser").fieldChooser(sourceFields, destinationFields);
             
         </script>
 
