@@ -31,6 +31,10 @@ class SugerenciaProductosController extends Controller
 				'actions'=>array('listProductos', 'create'),
 				'users'=>array('*'),
 			),
+                        array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('informe'),
+				'expression'=>'Yii::app()->user->checkAccess("view_informes")',
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -149,6 +153,13 @@ class SugerenciaProductosController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionInforme(){
+            $model = SugerenciaProductos::model()->findAll();
+            $content = $this->renderPartial("excel",array("model"=>$model),true);
+            Yii::app()->request->sendFile("solicitado_".date("d-m-Y H:i:s").".xls",$content);
+        }
+        
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

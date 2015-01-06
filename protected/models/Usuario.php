@@ -171,10 +171,12 @@ class Usuario extends CActiveRecord
                                 $auth->assign('mantenedor_categorias', $this->idusuario);
                                 $auth->assign('backup', $this->idusuario);
                                 $auth->assign('view_sugerencia', $this->idusuario);
+                                $auth->assign('view_informes', $this->idusuario);
                                 break;
                             case 2:
                                 $auth->assign('pedidos', $this->idusuario);
                                 $auth->assign('view_sugerencia', $this->idusuario);
+                                $auth->assign('view_informes', $this->idusuario);
                                 break;
                             case 3:
                                 $auth->assign('lista_productos', $this->idusuario);
@@ -245,10 +247,12 @@ class Usuario extends CActiveRecord
                                 $auth->assign('mantenedor_categorias', $usu->idusuario);
                                 $auth->assign('backup', $usu->idusuario);
                                 $auth->assign('view_sugerencia', $this->idusuario);
+                                $auth->assign('view_informes', $this->idusuario);
                                 break;
                             case 2:
                                 $auth->assign('pedidos', $usu->idusuario);
                                 $auth->assign('view_sugerencia', $this->idusuario);
+                                $auth->assign('view_informes', $this->idusuario);
                                 break;
                             case 3:
                                 $auth->assign('lista_productos', $usu->idusuario);

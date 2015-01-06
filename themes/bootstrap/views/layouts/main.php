@@ -36,6 +36,7 @@
 
     <?php
         $auth=Yii::app()->authManager;
+        //$task=$auth->createTask('view_informes','acceso a todos los informes del sistema, ventas, sugerencias, etc.');
         //$task=$auth->createTask('view_sugerencia','acceso a la visualizacion de las sugerencias subidas por los usuarios');
         //$task=$auth->createTask('backup','acceso a los backup, realizarlo, eliminarlos y restauración');
         //$task=$auth->createTask('mantenedor_tipo_usuario','acceso total al mantenedor de los tipos de usuario');
@@ -172,6 +173,17 @@
                                                         array('label'=>'Usuario', 'url'=>array('/usuario'),'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id)),
                                                     ),                                                    
                                                     'visible'=>$auth->checkAccess('mantenedor_usuario',Yii::app()->user->id) || $auth->checkAccess('mantenedor_producto',Yii::app()->user->id)),
+                                            
+                                                array('label'=>'<span class="glyphicon glyphicon-book"></span> Informes <b class="caret"></b>', 'url'=>'#', 
+                                                    'linkOptions'=>array(
+                                                        'class'=>'dropdown-toggle',
+                                                        'data-toggle'=>'dropdown',
+                                                    ),
+                                                    'items'=>array(
+                                                        array('label'=>'Productos solicitados', 'url'=>array('/sugerenciaProductos/informe/')),
+                                                    ),                                                    
+                                                    'visible'=>$auth->checkAccess('view_informes',Yii::app()->user->id)),
+                                            
                                                 array('label'=>'<span class="glyphicon glyphicon-cog"></span> Cuenta <b class="caret"></b>', 'url'=>'#', 
                                                     'linkOptions'=>array(
                                                         'class'=>'dropdown-toggle',
