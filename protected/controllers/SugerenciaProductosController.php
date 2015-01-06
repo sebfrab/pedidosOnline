@@ -155,7 +155,9 @@ class SugerenciaProductosController extends Controller
 	}
         
         public function actionInforme(){
-            $model = SugerenciaProductos::model()->findAll();
+            $criteria=new CDbCriteria;
+            $criteria->order = 'fecha ASC';
+            $model = SugerenciaProductos::model()->findAll($criteria);
             $content = $this->renderPartial("excel",array("model"=>$model),true);
             Yii::app()->request->sendFile("solicitado_".date("d-m-Y H:i:s").".xls",$content);
         }
