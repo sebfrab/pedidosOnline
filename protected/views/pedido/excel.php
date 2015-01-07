@@ -1,5 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
     $ant=-1;
     $valueAnt;
 ?>
@@ -17,7 +18,7 @@
     </tr>
     <?php foreach ($model as $value) {
         if($ant!=$value->pedido->idpedido){
-            if($ant!=-1 && isset($valueAnt)){
+            if($ant!=-1){
             ?>
             <tr>
                 <th></th>
