@@ -210,6 +210,7 @@ class PedidoController extends Controller
                     'producto',
                 );
             $criteria->order = 'pedido.idpedido ASC';
+            
             $model = DetallePedido::model()->findAll($criteria);
             
             /*$this->render('excel',array(
