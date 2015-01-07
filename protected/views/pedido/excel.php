@@ -17,7 +17,7 @@
     </tr>
     <?php foreach ($model as $value) {
         if($ant!=$value->pedido->idpedido){
-            if($ant!=-1){
+            if($ant!=-1 && isset($valueAnt)){
             ?>
             <tr>
                 <th></th>
