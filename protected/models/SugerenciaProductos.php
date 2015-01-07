@@ -100,6 +100,11 @@ class SugerenciaProductos extends CActiveRecord
 		return parent::model($className);
 	}
         
+        public function getFechaSolicitud()
+        {
+            return $newDate = date("d-m-Y", strtotime($this->fecha));
+        }
+        
         public function beforeSave() {
             if ($this->isNewRecord)
                 $this->fecha  = date("Y-m-d H:i:s");

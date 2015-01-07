@@ -10,7 +10,7 @@
         <td><?php echo $value->producto->nombre; ?></td>
         <td><?php echo $value->producto->marca; ?></td>
         <td><?php echo $value->producto->talla; ?></td>
-        <td><?php echo $value->fecha; ?></td>
+        <td><?php echo $value->FechaSolicitud; ?></td>
     </tr>
 <?php } ?>
 </table>

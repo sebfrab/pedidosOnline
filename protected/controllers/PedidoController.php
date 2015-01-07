@@ -35,6 +35,10 @@ class PedidoController extends Controller
 				'actions'=>array('admin','delete','create','update','index','view','list'),
 				'expression'=>'Yii::app()->user->checkAccess("mantenedor_pedidos")',
 			),
+                        array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('informe'),
+				'expression'=>'Yii::app()->user->checkAccess("view_informes")',
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -198,6 +202,23 @@ class PedidoController extends Controller
 			'model'=>$model,
 		));
 	}
+
+        public function actionInforme(){
+            $criteria=new CDbCriteria;
+            $criteria->with=array(
+                    'pedido',
+                    'producto',
+                );
+            $criteria->order = 'pedido.idpedido ASC';
+            $model = DetallePedido::model()->findAll($criteria);
+            
+            /*$this->render('excel',array(
+			'model'=>$model,
+		));*/
+            
+            $content = $this->renderPartial("excel",array("model"=>$model),true);
+            Yii::app()->request->sendFile("pedidos_".date("d-m-Y H:i:s").".xls",$content);
+        }
         
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

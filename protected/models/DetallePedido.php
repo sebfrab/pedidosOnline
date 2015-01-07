@@ -45,6 +45,7 @@ class DetallePedido extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'producto' => array(self::BELONGS_TO,'Producto','producto_idproducto'),
+                    'pedido' => array(self::BELONGS_TO,'Pedido','pedido_idpedido'),
 		);
 	}
 

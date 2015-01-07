@@ -181,6 +181,7 @@
                                                     ),
                                                     'items'=>array(
                                                         array('label'=>'Productos solicitados', 'url'=>array('/sugerenciaProductos/informe/')),
+                                                        array('label'=>'Pedidos Realizados', 'url'=>array('/pedido/informe/')),
                                                     ),                                                    
                                                     'visible'=>$auth->checkAccess('view_informes',Yii::app()->user->id)),
                                             

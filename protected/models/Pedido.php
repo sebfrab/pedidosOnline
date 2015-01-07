@@ -48,7 +48,9 @@ class Pedido extends CActiveRecord
 		return array(
                     'usuario' => array(self::BELONGS_TO,'Usuario','usuario_idusuario'),
                     'estado' => array(self::BELONGS_TO,'Estado','estado_idestado'),
+                    'detalle'=>array(self::HAS_MANY,'DetallePedido', 'pedido_idpedido'),
                     'detalleCount' => array(self::STAT, 'DetallePedido', 'pedido_idpedido'),
+                    'detalleSum'=>array(self::STAT,  'DetallePedido', 'pedido_idpedido', 'select' => 'SUM(t.cantidad)'),
 		);
 	}
 
