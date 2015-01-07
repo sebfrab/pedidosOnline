@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
     $ant=-1;
-    $valueAnt=null;
+    $valueAnt;
 ?>
 <table>
     <tr>
