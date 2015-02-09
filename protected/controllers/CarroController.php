@@ -188,16 +188,19 @@ class CarroController extends Controller
                 }
                 
                 if($sw == 1){
-                    $pedido = new Pedido();
-                    $pedido->usuario_idusuario = Yii::app()->user->id;
-                    $pedido->fecha_pedido = date("Y-m-d H:i:s");
-                    $pedido->estado_idestado = 2;
-                    $pedido->comentario = $comentario;
-                    if($pedido->save()){
+                    /**********************************************************/
+                    /*consulta si el usuario tiene algún pedido pendiente*/
+                    /*con esto el pedido a realizar se adjuntará al pendiente*/
+                    /**********************************************************/
+                    $criteria=new CDbCriteria;
+                    $criteria->addCondition('usuario_idusuario = '.Yii::app()->user->id);
+                    $criteria->addCondition('estado_idestado = 2');
+                    $pedidoPendiente = Pedido::model()->find($criteria);
+                    if($pedidoPendiente->idpedido != 0){
                         foreach($model as $item){
                             $producto = Producto::model()->findByPk($item->producto_idproducto);
                             $detalle = new DetallePedido();
-                            $detalle->pedido_idpedido = $pedido->idpedido;
+                            $detalle->pedido_idpedido = $pedidoPendiente->idpedido;
                             $detalle->cantidad = $item->cantidad;
                             $detalle->producto_idproducto = $item->producto_idproducto;
                             $detalle->save();
@@ -205,11 +208,36 @@ class CarroController extends Controller
                             $producto->save();
                             $item->delete();
                         }
-                        Yii::app()->user->setFlash("success","Pedido realizado #$pedido->idpedido");
+                        Yii::app()->user->setFlash("success","Se han agregado los productos al pedido #$pedidoPendiente->idpedido");
                         $this->redirect(array('carro/list'));
                     }else{
-                        Yii::app()->user->setFlash("error","No se pudo realizar el pedido, intentelo más tarde");
-                        $this->redirect(array('carro/list'));
+                    /**********************************************************/
+                    /*creación del pedido normal. se crea el pedido y se ingresa*/
+                    /*el detalle del correspondiente*/      
+                    /**********************************************************/
+                        $pedido = new Pedido();
+                        $pedido->usuario_idusuario = Yii::app()->user->id;
+                        $pedido->fecha_pedido = date("Y-m-d H:i:s");
+                        $pedido->estado_idestado = 2;
+                        $pedido->comentario = $comentario;
+                        if($pedido->save()){
+                            foreach($model as $item){
+                                $producto = Producto::model()->findByPk($item->producto_idproducto);
+                                $detalle = new DetallePedido();
+                                $detalle->pedido_idpedido = $pedido->idpedido;
+                                $detalle->cantidad = $item->cantidad;
+                                $detalle->producto_idproducto = $item->producto_idproducto;
+                                $detalle->save();
+                                $producto->cantidad -= $item->cantidad;
+                                $producto->save();
+                                $item->delete();
+                            }
+                            Yii::app()->user->setFlash("success","Pedido realizado #$pedido->idpedido");
+                            $this->redirect(array('carro/list'));
+                        }else{
+                            Yii::app()->user->setFlash("error","No se pudo realizar el pedido, intentelo más tarde");
+                            $this->redirect(array('carro/list'));
+                        }
                     }
                 }else{
                     Yii::app()->user->setFlash("error","No se pudo realizar el pedido, intentelo más tarde");
