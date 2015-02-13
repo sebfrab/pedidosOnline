@@ -210,8 +210,8 @@ class PedidoController extends Controller
                     $criteriaHorario=new CDbCriteria;
                     $criteriaHorario->addCondition('dia = '.$dia);
                     $horario = DiasEntrega::model()->find($criteriaHorario);
-                    
-                    $model->curso = $horario->curso;
+                    if(isset($horario->curso))
+                        $model->curso = $horario->curso;
                     $model->fecha_pedido = '<'.$fecha;
                     
                     $model->estado_idestado = 2;
