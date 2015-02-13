@@ -7,10 +7,12 @@
             <?php
             if(Yii::app()->user->isGuest){
             ?>
-            <p style="text-align: center;"><a href="<?php echo Yii::app()->createUrl('/site/login'); ?>" class="btn btn-danger btn-lg">INGRESAR</a></p>
+                <p style="text-align: center;"><a href="<?php echo Yii::app()->createUrl('/site/login'); ?>" class="btn btn-danger btn-lg">INGRESAR</a></p>
             <?php
-            }
+            }else{
             ?>
+                <p style="text-align: center;"><?php echo CHtml::link('Comienza tu Pedido', $this->createAbsoluteUrl('listProductos/index',array('id'=>2)), array('class'=>'btn btn-success btn-lg'));?></p>
+            <?php } ?>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <img id="manoCelular" class="img-responsive" alt="mano_celular" src="<?php echo Yii::app()->request->baseUrl; ?>/images/mano_celular.png" />
