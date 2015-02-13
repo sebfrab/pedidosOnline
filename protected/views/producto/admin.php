@@ -52,6 +52,7 @@ $this->menu=array(
                 ),
 		'nombre',
 		'marca',
+                'cantidad',
 		/*
 		'talla',
 		'precio',
