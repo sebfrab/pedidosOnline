@@ -10,10 +10,21 @@
  * @property string $fecha_pedido
  * @property string $fecha_entrega
  * @property string $comentario
+ * 
  */
 class Pedido extends CActiveRecord
 {
-	/**
+        /************************************************************/
+        /*para filtrado por curso, nombre, apellidos y N° cadete
+         * en el listado de pedidos (search) */
+        /************************************************************/
+        public $curso;
+        public $nombres;
+        public $apellidos;
+        public $ncadete;
+        
+        
+        /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -31,7 +42,7 @@ class Pedido extends CActiveRecord
 		return array(
 			array('estado_idestado, usuario_idusuario, fecha_pedido', 'required'),
 			array('estado_idestado, usuario_idusuario', 'length', 'max'=>10),
-			array('fecha_entrega, comentario', 'safe'),
+			array('fecha_entrega, comentario, curso, nombres, apellidos, ncadete', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idpedido, estado_idestado, usuario_idusuario, fecha_pedido, fecha_entrega, comentario', 'safe', 'on'=>'search'),
@@ -91,8 +102,47 @@ class Pedido extends CActiveRecord
                     $criteria->compare('idpedido',$this->idpedido,true);
                     //$criteria->compare('usuario.username',$this->usuario->username,true);
                     $criteria->compare('estado.idestado',$this->estado_idestado,true);
-                    $criteria->compare('usuario.nombres',$this->usuario_idusuario,true);
-                    $criteria->compare('fecha_pedido',$this->fecha_pedido,true);
+                    //$criteria->compare('usuario.nombres',$this->usuario_idusuario,true);
+                    
+                    $criteria->compare('usuario.ncadete',$this->ncadete,true);
+                    $criteria->compare('DATE_FORMAT(fecha_pedido,"%d-%m-%Y")',$this->fecha_pedido,true);
+                    $criteria->compare('usuario.curso',$this->curso);
+                    
+                    /*if($this->fecha_pedido==null){
+                        $fecha = date("d-m-Y");
+                        $criteria->addCondition('DATE_FORMAT(fecha_pedido,"%d-%m-%Y") >  '.$fecha);
+                    }else{
+                        $criteria->addCondition('DATE_FORMAT(fecha_pedido,"%d-%m-%Y")='.$this->fecha_pedido);
+                    }   
+                    
+                    
+                    if($this->curso==null){
+                        $dia = date("N");
+                        $criteriaHorario=new CDbCriteria;
+                        $criteriaHorario->addCondition('dia = '.$dia);
+                        $horario = DiasEntrega::model()->findAll($criteriaHorario);
+                        $sw=0;
+                        foreach($horario as $hr){
+                            if($sw==0)
+                                $criteria->compare('usuario.curso',$hr->curso,true);
+                            else{
+                                $criteria->compare('usuario.curso',$hr->curso,true,'OR');
+                                $sw=1;
+                            }
+                        }
+                    }else{
+                       $criteria->addCondition('usuario.curso ='. $this->curso); 
+                    }*/
+                    
+                    
+                    /*foreach($horario as $hr){
+                        $criteria->addCondition('usuario.curso',$hr->curso,'OR');
+                        //$criteria->addSearchCondition('usuario.curso', $hr->curso, true);
+                    }*/
+
+                    $criteria->addSearchCondition('usuario.nombres', $this->nombres);
+                    $criteria->addSearchCondition('usuario.apellidos', $this->apellidos);
+                    
                 }else{
                     $criteria->compare('idpedido',$this->idpedido,true);
                     //$criteria->compare('usuario.username',$this->usuario->username,true);
@@ -121,6 +171,11 @@ class Pedido extends CActiveRecord
         public function getFechaPedido()
         {
             return $newDate = date("d-m-Y", strtotime($this->fecha_pedido));
+        }
+        
+        public function getHoraPedido()
+        {
+            return $newDate = date("H:i:s", strtotime($this->fecha_pedido));
         }
         
         function beforeSave(){

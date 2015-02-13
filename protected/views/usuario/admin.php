@@ -61,6 +61,7 @@ $this->menu=array(
                     'header'=>'nombre',
                     'value'=>'$data->nombreCompleto',
                 ),
+                'curso',
                 'last_login',
 		/*
 		'apellidos',

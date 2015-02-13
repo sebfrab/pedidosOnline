@@ -14,6 +14,8 @@
  * @property string $sexo
  * @property string $last_login
  * @property string $email
+ * @property string $curso
+ * @property string $ncadete
  */
 class Usuario extends CActiveRecord
 {
@@ -42,6 +44,7 @@ class Usuario extends CActiveRecord
 			array('sexo', 'length', 'max'=>1),
 			array('email', 'length', 'max'=>150),
                         array('email','email'),
+                        array('curso, ncadete', 'numerical', 'integerOnly'=>true),
                         array('username','unique','attributeName' => 'username' ,'className' => 'Usuario'),
 			array('last_login', 'safe'),
                         
@@ -52,7 +55,7 @@ class Usuario extends CActiveRecord
                     
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idusuario, tipo_usuario_idtipo_usuario, estado_idestado, username, password_2, nombres, apellidos, sexo, last_login, email', 'safe', 'on'=>'search'),
+			array('idusuario, tipo_usuario_idtipo_usuario, estado_idestado, username, password_2, nombres, apellidos, sexo, last_login, email, curso', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -89,6 +92,8 @@ class Usuario extends CActiveRecord
 			'last_login' => 'Last Login',
 			'email' => 'Email',
                         'nombrecompleto' => 'Nombre',
+                        'curso'=>'Curso',
+                        'ncadete'=>'N° Kdt',
                     
                         'old_password' => 'Contraseña Actual',
 			'new_password' => 'Nueva Contraseña',
@@ -267,5 +272,28 @@ class Usuario extends CActiveRecord
                     }
                 }  
             }
+        }
+        
+        public static function horarioBloqueo($idUsuario){
+            $criteria=new CDbCriteria;
+            $criteria->addCondition('idusuario = '.$idUsuario);
+            $usuario = Usuario::model()->find($criteria);
+            
+            $criteriaHorario=new CDbCriteria;
+            $criteriaHorario->addCondition('curso = '.$usuario->curso);
+            $horario = HorarioBloqueo::model()->findAll($criteriaHorario);
+            
+            $dia = date("N");
+            $hora = date("H:i:s");
+            $sw = 0;
+            foreach($horario as $hr){
+                if($hr->dia == $dia){
+                    if(($hora >= $hr->inicio) && ($hora <= $hr->fin)){
+                       $sw = 1; 
+                       break;  
+                    }
+                }
+            }
+            return $sw;
         }
 }

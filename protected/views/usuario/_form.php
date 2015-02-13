@@ -74,6 +74,18 @@
 		<?php echo $form->textField($model,'email',array('size'=>50,'maxlength'=>150, 'class'=>'form-control')) ?>
 		<?php echo $form->error($model,'email',array('class'=>'alert alert-danger')); ?>
 	</div>
+    
+        <div class="form-group">
+		<?php echo $form->labelEx($model,'curso',array('class'=>'control-label')); ?>
+		<?php echo $form->textField($model,'curso',array('size'=>10,'maxlength'=>10, 'class'=>'form-control')) ?>
+		<?php echo $form->error($model,'curso',array('class'=>'alert alert-danger')); ?>
+	</div>
+    
+        <div class="form-group">
+		<?php echo $form->labelEx($model,'ncadete',array('class'=>'control-label')); ?>
+		<?php echo $form->textField($model,'ncadete',array('size'=>10,'maxlength'=>10, 'class'=>'form-control')) ?>
+		<?php echo $form->error($model,'ncadete',array('class'=>'alert alert-danger')); ?>
+	</div>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'sexo',array('class'=>'control-label')); ?>

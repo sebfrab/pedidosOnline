@@ -17,6 +17,7 @@ $this->menu=array(
 		'tipo.nombre',
 		'estado.nombre',
 		'sexo',
+                'curso',
 		'last_login',
 	),
 )); ?>

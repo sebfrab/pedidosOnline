@@ -28,7 +28,7 @@ class PedidoController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('list','view','update'),
+				'actions'=>array('list','view','update','voucher'),
 				'expression'=>'Yii::app()->user->checkAccess("pedidos")',
 			),
                         array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -113,10 +113,13 @@ class PedidoController extends Controller
                         if(isset($_POST['ajax']) && $_POST['ajax']==='pedido-form')
                         {  
                             if($model->save()){ 
-                                Yii::app()->user->setFlash("success","Pedido actualizado");
+                                Yii::app()->user->setFlash("success","Pedido #$model->idpedido actualizado, estado: ". $model->estado->nombre);
                                 echo CJSON::encode(array(
                                     'insert' => true,
-                                    'redirectUrl' => Yii::app()->createUrl('pedido/'.$model->idpedido)
+                                    //redirecciona a la lista de pedidos
+                                    'redirectUrl' => Yii::app()->createUrl('pedido/list')
+                                    //redirecciona al mismo pedido
+                                    //'redirectUrl' => Yii::app()->createUrl('pedido/'.$model->idpedido)
                                 ));
                                 Yii::app()->end();
                             } 
@@ -192,16 +195,50 @@ class PedidoController extends Controller
 		$this->render('list',array(
 			'model'=>$model,
 		));*/
-            
+
                 $model=new Pedido('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Pedido']))
+		if(isset($_GET['Pedido'])){
 			$model->attributes=$_GET['Pedido'];
-
+                        
+                }
+                
+                if($model->curso==null && $model->fecha_pedido==null){
+                    $fecha = date("d-m-Y");
+                    
+                    $dia = date("N");
+                    $criteriaHorario=new CDbCriteria;
+                    $criteriaHorario->addCondition('dia = '.$dia);
+                    $horario = DiasEntrega::model()->find($criteriaHorario);
+                    
+                    $model->curso = $horario->curso;
+                    $model->fecha_pedido = '<'.$fecha;
+                    
+                    $model->estado_idestado = 2;
+                }
+                
 		$this->render('list',array(
 			'model'=>$model,
 		));
 	}
+        
+        public function actionVoucher($id){
+            $model=$this->loadModel($id);
+            
+            
+            $this->layout = '//layouts/mainVoucher';
+            
+            # mPDF
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+            # You can easily override default constructor's params
+            $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','PAPER80','','',0,0,3,1,0,0,'P');
+            # render (full page)
+            $mPDF1->WriteHTML($this->render('voucher', array('model'=>$model), true));
+            # Outputs ready PDF
+            $mPDF1->Output();
+            
+            //$this->render('voucher', array('model'=>$model));
+        }
 
         public function actionInforme(){
             $criteria=new CDbCriteria;

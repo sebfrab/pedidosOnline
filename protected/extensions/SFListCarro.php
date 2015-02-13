@@ -116,8 +116,11 @@ class SFListCarro extends CWidget{
         echo "</div>";
         
         echo "<p style=\"font-size:18px;\" class=\"precio\">Total $$total</p>";
-
-        echo "<input class=\"btn btn-primary pull-right\" type=\"submit\" value=\"hacer pedido\" />";
+        
+        /* cadete no puede realizar pedido en cierto horario */
+        //if(!Usuario::horarioBloqueo(Yii::app()->user->id)){
+            echo "<input class=\"btn btn-primary pull-right\" type=\"submit\" value=\"hacer pedido\" />";
+        //}
         echo "</form>";
         echo "</div>";
     }   
