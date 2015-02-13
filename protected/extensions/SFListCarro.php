@@ -10,7 +10,7 @@ class SFListCarro extends CWidget{
         foreach($this->model as $item){
             $i++;
             echo "<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
-            $urlImage = $item->producto->imagen();
+            $urlImage = $item->producto->imagenThumbs();
             $nombre_producto = $item->producto->nombre;
             echo "<div class=\"thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-12\">
                     <a class=\"fancybox\" href=\"$urlImage\">
