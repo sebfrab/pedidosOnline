@@ -52,6 +52,11 @@ $this->menu=array(
                 ),
 		'nombre',
 		'marca',
+                array(
+                    'name'=>'subcategoria_idsubcategoria',
+                    'value'=>'$data->subcategoria->nombre',
+                    'filter'=>  Subcategoria::model()->getListSubCategorias(),
+                ),
                 'cantidad',
 		/*
 		'talla',

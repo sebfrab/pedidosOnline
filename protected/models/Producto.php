@@ -68,7 +68,7 @@ class Producto extends CActiveRecord
 		return array(
 			'idproducto' => 'Idproducto',
 			'estado_idestado' => 'Estado Idestado',
-			'subcategoria_idsubcategoria' => 'Subcategoria Idsubcategoria',
+			'subcategoria_idsubcategoria' => 'Subcategoria',
 			'nombre' => 'Nombre',
 			'descripcion' => 'Descripcion',
 			'marca' => 'Marca',
@@ -99,12 +99,16 @@ class Producto extends CActiveRecord
                 
 		$criteria->compare('idproducto',$this->idproducto,true);
 		$criteria->compare('estado_idestado',$this->estado_idestado,true);
+                
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
 		$criteria->compare('marca',$this->marca,true);
 		$criteria->compare('talla',$this->talla,true);
 		$criteria->compare('precio',$this->precio,true);
 		$criteria->compare('cantidad',$this->cantidad,true);
+                
+                if($this->subcategoria_idsubcategoria!=null)
+                    $criteria->addCondition('subcategoria_idsubcategoria = '.$this->subcategoria_idsubcategoria);
                 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
