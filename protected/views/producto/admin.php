@@ -58,6 +58,7 @@ $this->menu=array(
                     'filter'=>  Subcategoria::model()->getListSubCategorias(),
                 ),
                 'cantidad',
+                'idexterno',
 		/*
 		'talla',
 		'precio',

@@ -14,6 +14,7 @@
  * @property string $precio
  * @property string $cantidad
  * @property string $img
+ * @property string $idexterno
  */
 class Producto extends CActiveRecord
 {
@@ -38,11 +39,12 @@ class Producto extends CActiveRecord
 			array('nombre', 'length', 'max'=>150),
 			array('marca', 'length', 'max'=>50),
 			array('img', 'length', 'max'=>350),
+                        array('idexterno', 'length', 'max'=>150),
 			array('descripcion', 'safe'),
                         array('idproducto', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idproducto, estado_idestado, subcategoria_idsubcategoria, nombre, descripcion, marca, talla, precio, cantidad, img', 'safe', 'on'=>'search'),
+			array('idproducto, estado_idestado, subcategoria_idsubcategoria, nombre, descripcion, marca, talla, precio, cantidad, img, idexterno', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +78,7 @@ class Producto extends CActiveRecord
 			'precio' => 'Precio',
 			'cantidad' => 'Cantidad',
 			'img' => 'Img',
+                        'idexterno' => 'ID externo',
 		);
 	}
 
@@ -106,6 +109,7 @@ class Producto extends CActiveRecord
 		$criteria->compare('talla',$this->talla,true);
 		$criteria->compare('precio',$this->precio,true);
 		$criteria->compare('cantidad',$this->cantidad,true);
+                $criteria->compare('idexterno',$this->idexterno,true);
                 
                 if($this->subcategoria_idsubcategoria!=null)
                     $criteria->addCondition('subcategoria_idsubcategoria = '.$this->subcategoria_idsubcategoria);

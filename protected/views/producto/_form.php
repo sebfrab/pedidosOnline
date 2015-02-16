@@ -71,6 +71,12 @@
 	</div>
     
         <div class="form-group">
+		<?php echo $form->labelEx($model,'idexterno',array('class'=>'control-label')); ?>
+		<?php echo $form->textField($model,'idexterno',array('size'=>60,'maxlength'=>150, 'class'=>'form-control')) ?>
+		<?php echo $form->error($model,'idexterno',array('class'=>'alert alert-danger')); ?>
+	</div>
+    
+        <div class="form-group">
 		<?php echo $form->labelEx($model,'img'); ?>
 		<?php echo $form->fileField($model,'img'); ?>
 		<?php echo $form->error($model,'img', array('class'=>'help-block')); ?>

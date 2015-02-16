@@ -191,16 +191,17 @@ class ProductoController extends Controller
                     $uploadedFile=CUploadedFile::getInstance($model,'img');
                     $fileName = "{$rnd}-{$uploadedFile}";
 
-                    if(!empty($uploadedFile)){
-                        $uploadedFile->saveAs($path_picture.$fileName);
-                        $model->img= $fileName;
-                        
-                        copy($path_picture.$fileName,$path_picture_thumbs.$fileName);
-                                    
-                        $file=$path_picture_thumbs.$fileName;
-                        $img = Yii::app()->simpleImage->load($file);
-                        $img->resizeToWidth(250);
-                        $img->save($path_picture_thumbs.$fileName);
+                    if($uploadedFile != null){
+                        if($uploadedFile->saveAs($path_picture.$fileName)){
+                            $model->img= $fileName;
+
+                            copy($path_picture.$fileName,$path_picture_thumbs.$fileName);
+
+                            $file=$path_picture_thumbs.$fileName;
+                            $img = Yii::app()->simpleImage->load($file);
+                            $img->resizeToWidth(250);
+                            $img->save($path_picture_thumbs.$fileName);
+                        }
                     }
                     ////////////////////////////////////////////////////////////////////
                     
