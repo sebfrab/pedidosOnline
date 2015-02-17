@@ -54,7 +54,7 @@
         <div class="row">
             
             <div class="col-xs-12" style="font-size: 10px;">
-                <p># <?php echo $item->producto->idproducto; ?> - <?php echo $item->producto->nombre; ?></p>
+                <p># <?php echo $item->producto->idexterno; ?> - <?php echo $item->producto->nombre; ?></p>
             </div>
 
             <div class="col-xs-4" style="font-size: 10px;">
