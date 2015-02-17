@@ -44,12 +44,6 @@
             }',
         ),
 )); ?>
-
-        <div class="form-group">
-		<?php echo $form->labelEx($model,'idsubcategoria',array('class'=>'control-label')); ?>
-		<?php echo $form->textField($model,'idsubcategoria',array('size'=>60,'maxlength'=>100, 'class'=>'form-control')) ?>
-		<?php echo $form->error($model,'idsubcategoria',array('class'=>'alert alert-danger')); ?>
-	</div>
     
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'nombre',array('class'=>'control-label')); ?>

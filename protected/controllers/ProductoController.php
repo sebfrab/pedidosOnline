@@ -181,8 +181,10 @@ class ProductoController extends Controller
 
                 if(isset($_POST['Producto']))
                 {
+
+                    $imgOld = $model->img;
                     $model->attributes=$_POST['Producto'];
-                    
+
                     ////////////////////////////////////////////////////////////////////
                     $path_picture = "images/productos/";
                     $path_picture_thumbs = "images/productos/thumbs/";
@@ -191,8 +193,8 @@ class ProductoController extends Controller
                     $uploadedFile=CUploadedFile::getInstance($model,'img');
                     $fileName = "{$rnd}-{$uploadedFile}";
 
-                    if($uploadedFile != null){
-                        if($uploadedFile->saveAs($path_picture.$fileName)){
+                    if("$uploadedFile" != ""){
+                            $uploadedFile->saveAs($path_picture.$fileName);
                             $model->img= $fileName;
 
                             copy($path_picture.$fileName,$path_picture_thumbs.$fileName);
@@ -201,20 +203,24 @@ class ProductoController extends Controller
                             $img = Yii::app()->simpleImage->load($file);
                             $img->resizeToWidth(250);
                             $img->save($path_picture_thumbs.$fileName);
-                            
-                            Yii::app()->db->createCommand()->update('producto',
-                                array('img'=>$model->img),
-                                'idexterno = :param',
-                                array(':param'=>$model->idexterno)
-                            );
-                        }
+                        
+                    }else{
+                        $model->img = $imgOld;
                     }
                     ////////////////////////////////////////////////////////////////////
-                    
                     
                     if(isset($_POST['ajax']) && $_POST['ajax']==='producto-form')
                     {  
                         if($model->save()){ 
+                            Yii::app()->db->createCommand()->update('producto',
+                                array(
+                                    'img'=>new CDbExpression("'".$model->img."'"),
+                                    'subcategoria_idsubcategoria'=>new CDbExpression($model->subcategoria_idsubcategoria),
+                                    ),
+                                'idexterno = :param',
+                                array(':param'=>$model->idexterno)
+                            );
+                            
                             echo CJSON::encode(array(
                                 'insert' => true,
                                 'redirectUrl' => Yii::app()->createUrl('producto/'.$model->idproducto)
@@ -223,6 +229,14 @@ class ProductoController extends Controller
                         } 
                     }else{
                         if($model->save()){
+                            Yii::app()->db->createCommand()->update('producto',
+                                array(
+                                    'img'=>new CDbExpression("'".$model->img."'"),
+                                    'subcategoria_idsubcategoria'=>new CDbExpression($model->subcategoria_idsubcategoria),
+                                    ),
+                                'idexterno = :param',
+                                array(':param'=>$model->idexterno)
+                            );
                             $this->redirect(array('view','id'=>$model->idproducto));
                         }
                     }   
