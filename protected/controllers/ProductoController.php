@@ -201,8 +201,7 @@ class ProductoController extends Controller
 
                             $file=$path_picture_thumbs.$fileName;
                             $img = Yii::app()->simpleImage->load($file);
-                            $img->resizeToWidth(250);
-                            $img->resizeToHeight(278);
+                            $img->resize(250, 278);
                             $img->save($path_picture_thumbs.$fileName);
                         
                     }else{
