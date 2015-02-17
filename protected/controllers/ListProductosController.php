@@ -53,9 +53,15 @@ class ListProductosController extends Controller
                 $titulo = $model->nombre;
             }
             
+            $CriteriaMenu = new CDbCriteria();
+            $CriteriaMenu->condition = "categoria_idcategoria = $model->categoria_idcategoria";
+            $menuObj = Subcategoria::model()->findAll($CriteriaMenu);
+            
+            
 		$this->render('index',array(
 			'model'=>$this->loadModel($id),
                         'titulo' => $titulo,
+                        'menuObj' => $menuObj,
 		));
 	}
 

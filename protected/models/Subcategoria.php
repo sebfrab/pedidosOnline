@@ -29,7 +29,6 @@ class Subcategoria extends CActiveRecord
 			array('categoria_idcategoria, nombre', 'required'),
 			array('categoria_idcategoria', 'length', 'max'=>10),
 			array('nombre', 'length', 'max'=>100),
-                        array('idsubcategoria', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idsubcategoria, categoria_idcategoria, nombre', 'safe', 'on'=>'search'),
@@ -106,6 +105,11 @@ class Subcategoria extends CActiveRecord
         } 
         
         public static function getListSubCategorias(){
-            return CHtml::listData(Subcategoria::model()->findAll(),'idsubcategoria','nombre');
+            return CHtml::listData(Subcategoria::model()->findAll(),'idsubcategoria','Subcategoria_Categoria');
+        }
+        
+        public function getSubcategoria_Categoria()
+        {
+            return $this->categoria->nombre.' / '.$this->nombre;
         }
 }

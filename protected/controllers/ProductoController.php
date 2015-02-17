@@ -201,6 +201,12 @@ class ProductoController extends Controller
                             $img = Yii::app()->simpleImage->load($file);
                             $img->resizeToWidth(250);
                             $img->save($path_picture_thumbs.$fileName);
+                            
+                            Yii::app()->db->createCommand()->update('producto',
+                                array('img'=>$model->img),
+                                'idexterno = :param',
+                                array(':param'=>$model->idexterno)
+                            );
                         }
                     }
                     ////////////////////////////////////////////////////////////////////

@@ -69,7 +69,20 @@
                             </div>
                             <div class="navbar-collapse bs-js-navbar-collapse collapse">
                                 
-                                <?php $this->widget('zii.widgets.CMenu',array(
+                                
+                                
+                                <?php
+                                    $this->widget('application.components.ActiveMenu',array(
+                                       'htmlOptions' => array(
+                                            'class'=>'menu nav navbar-nav navbar',
+                                        ),
+                                        'submenuHtmlOptions' => array(
+                                            'class'=>'dropdown-menu', 
+                                        ), 
+                                    ));
+                                ?>
+                                
+                                <?php /*$this->widget('zii.widgets.CMenu',array(
                                         'htmlOptions' => array(
                                             'class'=>'menu nav navbar-nav navbar',
                                         ),
@@ -124,7 +137,7 @@
                                                 array('label'=>'CONTACTO', 'url'=>array('/site/index#contacto'),'visible'=>Yii::app()->user->isGuest),
                                         ),
                                         'encodeLabel' => false,
-                                )); ?>
+                                )); */?>
                                 
                                 <?php
                                 $carroCount = 0;
