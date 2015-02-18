@@ -120,6 +120,8 @@ class Carro extends CActiveRecord
         public function stock($attribute, $params) {
             if($this->cantidad<1){
                 $this->addError('cantidad', 'Cantidad mayor a 0');
+            }elseif($this->cantidad>10){
+                $this->addError('cantidad', 'Máximo 10 Uni.');
             }else{
                 $model = Producto::model()->findByPk($this->producto_idproducto);
                 if($this->cantidad > $model->cantidad){
