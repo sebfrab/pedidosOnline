@@ -106,7 +106,7 @@ class ListProductosController extends Controller
                 }*/
             
                 $Criteria = new CDbCriteria();
-                $Criteria->condition = "subcategoria_idsubcategoria  = $id and estado_idestado=1";
+                $Criteria->condition = "subcategoria_idsubcategoria  = $id and estado_idestado=1 and cantidad>0";
                 //$Criteria->condition = "estado_idestado = 1";
                 $model = Producto::model()->findAll($Criteria);
 
