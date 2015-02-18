@@ -76,7 +76,7 @@ class Producto extends CActiveRecord
 			'marca' => 'Marca',
 			'talla' => 'Talla',
 			'precio' => 'Precio',
-			'cantidad' => 'Cantidad',
+			'cantidad' => 'Stock',
 			'img' => 'Img',
                         'idexterno' => 'ID externo',
 		);
