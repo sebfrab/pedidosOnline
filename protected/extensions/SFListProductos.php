@@ -14,11 +14,11 @@ class SFListProductos extends CWidget{
             
             echo "<div class=\"thumbnail\"><img src=\"$urlImage\"  alt=\"$item->nombre\"></div>";
             $talla = '';
-            if($item->talla!=''){
-                $talla = $item->talla;
+            if($item->talla!='' && strtoupper($item->talla)!='SIN TALLA'){
+                $talla = '(talla'. $item->talla.')';
             }
             
-            echo "<p class=\"productoNombbre\">$item->nombre (talla $talla)</p>";
+            echo "<p class=\"productoNombbre\">$item->nombre  $talla</p>";
             echo " </a>";
             echo "<p class=\"stock\">Stock: $item->cantidad</p>";
             
