@@ -15,7 +15,7 @@ class SFListProductos extends CWidget{
             echo "<div class=\"thumbnail\"><img src=\"$urlImage\"  alt=\"$item->nombre\"></div>";
             $talla = '';
             if($item->talla!='' && strtoupper($item->talla)!='SIN TALLA'){
-                $talla = '(talla'. $item->talla.')';
+                $talla = '(talla '. $item->talla.')';
             }
             
             echo "<p class=\"productoNombbre\">$item->nombre  $talla</p>";
