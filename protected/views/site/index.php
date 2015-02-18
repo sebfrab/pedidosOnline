@@ -47,7 +47,7 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-            <a target="_blank" href="http://admision.escuelanaval.cl"><img alt="admisión" class="img-responsive center-block" src="<?php echo Yii::app()->request->baseUrl; ?>/images/admision.png"/></a>
+            <a target="_blank" href="http://www.armada.cl/"><img alt="admisión" class="img-responsive center-block" src="<?php echo Yii::app()->request->baseUrl; ?>/images/armada.png"/></a>
         </div>
         <div class="col-lg-4"></div>
     </div>
