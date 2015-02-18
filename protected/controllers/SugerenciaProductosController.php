@@ -133,7 +133,7 @@ class SugerenciaProductosController extends Controller
                 $criteria->addCondition('cantidad=0');
                 
                 //solo se rescatan los productos que no hayan sido solicitados en los ultimos 7 días, esta regla se cumple solo para el ID del usuario logueado
-                $criteria->addCondition('idproducto NOT IN (select b.producto_idproducto from sugerencia_productos b where DATE_ADD(b.fecha, INTERVAL 7 DAY) > now() and b.usuario_idusuario='.Yii::app()->user->id.')');
+                $criteria->addCondition('estado_idestado <> 0 and idproducto NOT IN (select b.producto_idproducto from sugerencia_productos b where DATE_ADD(b.fecha, INTERVAL 7 DAY) > now() and b.usuario_idusuario='.Yii::app()->user->id.')');
                 
                 $productos = Producto::model()->findAll($criteria);                
                 
