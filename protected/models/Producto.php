@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'producto':
  * @property string $idproducto
+ * @property string $usuario_idusuario_update
  * @property string $estado_idestado
  * @property string $subcategoria_idsubcategoria
  * @property string $nombre
@@ -35,7 +36,7 @@ class Producto extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('estado_idestado, subcategoria_idsubcategoria, nombre, marca, talla, precio, cantidad', 'required'),
-			array('estado_idestado, subcategoria_idsubcategoria, talla, precio, cantidad', 'length', 'max'=>10),
+			array('estado_idestado, subcategoria_idsubcategoria, usuario_idusuario_update, talla, precio, cantidad', 'length', 'max'=>10),
 			array('nombre', 'length', 'max'=>150),
 			array('marca', 'length', 'max'=>50),
 			array('img', 'length', 'max'=>350),
@@ -150,6 +151,14 @@ class Producto extends CActiveRecord
             }
         }
         
+        protected function beforeSave(){
+            if (!$this->isNewRecord)
+                $this->usuario_idusuario_update = Yii::app()->user->id;
+
+            return parent::beforeSave();
+        }
+
+
         function beforeDelete(){
             if( $this->detallePedido !== array() )
                 return false;
