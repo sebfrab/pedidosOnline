@@ -202,19 +202,20 @@ class PedidoController extends Controller
 			$model->attributes=$_GET['Pedido'];
                         
                 }
-                
-                if($model->curso==null && $model->fecha_pedido==null){
-                    $fecha = date("d-m-Y");
-                    
-                    $dia = date("N");
-                    $criteriaHorario=new CDbCriteria;
-                    $criteriaHorario->addCondition('dia = '.$dia);
-                    $horario = DiasEntrega::model()->find($criteriaHorario);
-                    if(isset($horario->curso))
-                        $model->curso = $horario->curso;
-                    $model->fecha_pedido = '<'.$fecha;
-                    
-                    $model->estado_idestado = 2;
+                if($usuario->tipo->idtipo_usuario==1 || $usuario->tipo->idtipo_usuario==2){
+                    if($model->curso==null && $model->fecha_pedido==null){
+                        $fecha = date("d-m-Y");
+
+                        $dia = date("N");
+                        $criteriaHorario=new CDbCriteria;
+                        $criteriaHorario->addCondition('dia = '.$dia);
+                        $horario = DiasEntrega::model()->find($criteriaHorario);
+                        if(isset($horario->curso))
+                            $model->curso = $horario->curso;
+                        $model->fecha_pedido = '<'.$fecha;
+
+                        $model->estado_idestado = 2;
+                    }
                 }
                 
 		$this->render('list',array(
