@@ -202,6 +202,7 @@ class PedidoController extends Controller
 			$model->attributes=$_GET['Pedido'];
                         
                 }
+                $usuario = Usuario::model()->findByPk(Yii::app()->user->id);
                 if($usuario->tipo->idtipo_usuario==1 || $usuario->tipo->idtipo_usuario==2){
                     if($model->curso==null && $model->fecha_pedido==null){
                         $fecha = date("d-m-Y");
