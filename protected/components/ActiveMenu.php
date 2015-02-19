@@ -24,9 +24,9 @@ class ActiveMenu extends CMenu
             }
         }
         if(Yii::app()->user->isGuest){
-            $this->items[$count] = array('label'=>'AYUDA', 'url'=>array('/site/support'),'visible'=>Yii::app()->user->isGuest);
-            $count++;
-            $this->items[$count] = array('label'=>'CONDICIONES', 'url'=>'http://pedidosonline.escuelanaval.cl/images/condiciones.pdf', 'linkOptions' => array('target'=>'_blank'),'visible'=>Yii::app()->user->isGuest);
+            $this->items[$count] = array('label'=>'AYUDA <b class="caret"></b>', 'url'=>'#','visible'=>Yii::app()->user->isGuest,'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown',));
+                $this->items[$count]["items"][] = array('label'=>'Modo de uso', 'url'=>array('/site/support'));  
+                $this->items[$count]["items"][] = array('label'=>'Términos y Condiciones', 'url'=>Yii::app()->request->baseUrl.'/images/condiciones.pdf', 'linkOptions'=>array('class'=>'fancypdf'));
             $count++; 
             $this->items[$count] = array('label'=>'CONTACTO', 'url'=>array('/site/index#contacto'),'visible'=>Yii::app()->user->isGuest);
         }        

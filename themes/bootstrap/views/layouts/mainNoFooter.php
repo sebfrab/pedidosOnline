@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut Icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/iconos/pedidosOnline.ico"/>
         <meta name="language" content="es" />
         <meta name="author" content="Sebastian Franco Brantes UTFSM - ¿y por qué no? - seb.frab@gmail.com"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,6 +18,18 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/general.css" />
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-53199117-1', 'auto');
+            ga('send', 'pageview');
+        </script>
 	
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -41,19 +54,20 @@
                                 
                                 <?php $this->widget('zii.widgets.CMenu',array(
                                         'htmlOptions' => array(
-                                            'class'=>'nav navbar-nav navbar',
-                                            'id'=>'menu',
+                                            'class'=>'menu nav navbar-nav navbar',
                                         ),
                                         'submenuHtmlOptions' => array(
                                             'class'=>'dropdown-menu', 
-                                        ),
+                                        ), 
                                         'items'=>array(
-                                                array('label'=>'VESTIMENTA', 'url'=>array('/listProductos/index/1'), 'visible'=>!Yii::app()->user->isGuest),
-                                                array('label'=>'CALZADO', 'url'=>array('/listProductos/index/2'), 'visible'=>!Yii::app()->user->isGuest),
-                                                array('label'=>'OTROS', 'url'=>"#", 'visible'=>!Yii::app()->user->isGuest),
-                                                array('label'=>'AYUDA', 'url'=>array('/site/support'),'visible'=>Yii::app()->user->isGuest),
+                                                array('label'=>'AYUDA <b class="caret"></b>', 'url'=>'#','visible'=>Yii::app()->user->isGuest,'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
+                                                    'items'=>array(
+                                                    array('label'=>'Modo de uso', 'url'=>array('/site/support')),
+                                                    array('label'=>'Términos y Condiciones', 'url'=>Yii::app()->request->baseUrl.'/images/condiciones.pdf', 'linkOptions'=>array('class'=>'fancypdf'))
+                                                    )),
                                                 array('label'=>'CONTACTO', 'url'=>array('/site/index#contacto'),'visible'=>Yii::app()->user->isGuest),
                                         ),
+                                        'encodeLabel' => false,
                                 )); ?>
                                 
                                 <?php $this->widget('zii.widgets.CMenu',array(
@@ -83,12 +97,23 @@
         
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/collapse.js"></script>
-        
+        <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox.js"></script>
         
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#manoCelular").fadeIn(2000);
             });
+            $(".fancypdf").click(function(){
+                $.fancybox({
+                  type: 'html',
+                  autoSize: false,
+                  content: '<embed src="'+this.href+'#nameddest=self&page=1&view=FitH,0&zoom=80,0,0" type="application/pdf" height="99%" width="100%" />',
+                  beforeClose: function() {
+                    $(".fancybox-inner").unwrap();
+                  }
+                }); //fancybox
+                return false;
+               }); //click
         </script>
 
     </body>
