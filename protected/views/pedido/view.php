@@ -54,6 +54,8 @@ if($auth->checkAccess('mantenedor_pedidos',Yii::app()->user->id) || $tipoUsuario
 
 	<div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Ingresar' : 'Guardar',array('class'=>'btn btn-primary')); ?>
+                <?php echo CHtml::link('Voucher',array('pedido/voucher',
+                                         'id'=>$model->idpedido),array('target'=>'_blank', 'class' => 'btn btn-default')); ?>
 	</div>
 <?php $this->endWidget(); }else{
     echo "<p><b>Estado: ".$model->estado->nombre."</b></p>";
