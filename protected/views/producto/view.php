@@ -8,6 +8,7 @@
     <small>Codigo producto: #<?php echo $model->idproducto;?></small>
     <br/>
     <p style="font-size: 20px;" class="precioLeft">$<?php echo number_format(round($model->precio*1.05),0,",","."); ?></p>
+    <p>Marca: <?php echo $model->marca;?></p>
     <p>Talla: <?php echo $model->talla;?></p>
     <p>Stock: <?php echo $model->cantidad;?></p>
     
