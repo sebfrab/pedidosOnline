@@ -152,8 +152,8 @@ class Producto extends CActiveRecord
         }
         
         protected function beforeSave(){
-            if (!$this->isNewRecord)
-                $this->usuario_idusuario_update = Yii::app()->user->id;
+            //if (!$this->isNewRecord)
+            //    $this->usuario_idusuario_update = Yii::app()->user->id;
 
             return parent::beforeSave();
         }

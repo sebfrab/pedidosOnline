@@ -123,6 +123,7 @@ class ProductoController extends Controller
                 if(isset($_POST['Producto']))
 		{
                         $model->attributes=$_POST['Producto'];
+                        $model->usuario_idusuario_update = Yii::app()->user->id;
                         
                         ////////////////////////////////////////////////////////////////////
                         $path_picture = "images/productos/";

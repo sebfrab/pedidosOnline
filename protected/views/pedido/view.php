@@ -2,6 +2,8 @@
 
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <p>R.U.N.:<?php echo $model->usuario->username ?></p>
+<p>N° Kdt :<?php echo $model->usuario->ncadete ?></p>
+<p>Curso :<?php echo $model->usuario->curso ?></p>
 <p>Nombre : <?php echo $model->usuario->nombrecompleto?></p>
 <p>Fecha pedido : <?php echo $model->FechaPedido?></p>
 <p style="text-align: justify">Comentario : <?php echo nl2br($model->comentario);?></p>
