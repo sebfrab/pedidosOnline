@@ -105,7 +105,14 @@ class Pedido extends CActiveRecord
                     //$criteria->compare('usuario.nombres',$this->usuario_idusuario,true);
                     
                     $criteria->compare('usuario.ncadete',$this->ncadete,true);
-                    $criteria->compare('DATE_FORMAT(fecha_pedido,"%d-%m-%Y")',$this->fecha_pedido,true);
+                    
+                    /*$str = substr($this->fecha_pedido,0,1);
+                    if($str=='<'){
+                        $str = substr($this->fecha_pedido,1);
+                        $criteria->addCondition("fecha_pedido <  '2015-03-02'");
+                    }*/
+                    
+                    $criteria->compare('fecha_pedido',$this->fecha_pedido,true);
                     $criteria->compare('usuario.curso',$this->curso);
                     
                     /*if($this->fecha_pedido==null){

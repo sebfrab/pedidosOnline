@@ -9,6 +9,7 @@
         <th bgcolor="ccccff">ID</th>
         <th bgcolor="ccccff">Fecha</th>
         <th bgcolor="ccccff">Estado</th>
+        <th bgcolor="ccccff">Curso</th>
         <th bgcolor="ccccff">Usuario</th>
         
         <th bgcolor="ccccff">Producto</th>
@@ -26,6 +27,8 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                
+                <th></th>
                 <th></th>
                 <th align="right">Totales</th>
                 <th align="right"><?php echo $valueAnt->pedido->detalleSum ?></th>
@@ -38,6 +41,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <th></th>
                 
                 <td></td>
                 <td></td>
@@ -53,6 +57,7 @@
         <td><?php echo $value->pedido->idpedido ?></td>
         <td><?php echo $value->pedido->FechaPedido ?></td>
         <td><?php echo $value->pedido->estado->nombre ?></td>
+        <td><?php echo $value->pedido->usuario->curso ?></td>
         <td><?php echo $value->pedido->usuario->nombreCompleto ?></td>
         
         <td><?php echo $value->producto->nombre ?></td>
@@ -69,6 +74,8 @@
         <th></th>
         <th></th>
         <th></th>
+        <th></th>
+        
         <th></th>
         <th></th>
         <th align="right">Totales</th>

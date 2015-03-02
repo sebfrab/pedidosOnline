@@ -205,7 +205,7 @@ class PedidoController extends Controller
                 $usuario = Usuario::model()->findByPk(Yii::app()->user->id);
                 if($usuario->tipo->idtipo_usuario==1 || $usuario->tipo->idtipo_usuario==2){
                     if($model->curso==null && $model->fecha_pedido==null){
-                        $fecha = date("d-m-Y");
+                        $fecha = date("Y-m-d");
 
                         $dia = date("N");
                         $criteriaHorario=new CDbCriteria;
