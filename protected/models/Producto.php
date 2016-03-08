@@ -36,8 +36,9 @@ class Producto extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('estado_idestado, subcategoria_idsubcategoria, nombre, marca, talla, precio, cantidad', 'required'),
-			array('estado_idestado, subcategoria_idsubcategoria, usuario_idusuario_update, talla, precio, cantidad', 'length', 'max'=>10),
+			array('estado_idestado, subcategoria_idsubcategoria, usuario_idusuario_update, precio, cantidad', 'length', 'max'=>10),
 			array('nombre', 'length', 'max'=>150),
+                        array('talla', 'length', 'max'=>25),
 			array('marca', 'length', 'max'=>50),
 			array('img', 'length', 'max'=>350),
                         array('idexterno', 'length', 'max'=>150),
@@ -179,5 +180,72 @@ class Producto extends CActiveRecord
             }else{
                 return Yii::app()->request->baseUrl."/images/image-not-found.jpg";
             }
+        }
+        
+        
+        public static function saveWeb($productos){
+            $errores = "";
+            foreach ($productos as $producto){
+                $update = false;
+                $idproducto = 0;
+                $cantidad = 0;
+                $model= Producto::model()->findByPk($producto["idproducto"]);
+                if(empty($model)){
+                    $model =  new Producto();
+                    $model->idproducto = $producto["idproducto"];
+                    $model->subcategoria_idsubcategoria = 1;
+                    $model->usuario_idusuario_update = 1;
+                    $model->estado_idestado = 1;
+                    $model->cantidad = $producto["cantidad"];
+                    $model->precio = $producto["precio"];
+                }else{
+                    $update = true;
+                    $cantidad = $producto["cantidad"];
+                    $idproducto = $producto["idproducto"];
+                    $model->precio = $producto["precio"];
+                }
+
+                if(empty($producto["idexterno"])){
+                    $model->idexterno = 0;
+                }else{
+                    $model->idexterno = $producto["idexterno"];
+                }   
+                
+                if(empty($producto["marca"])){
+                    $model->marca = "Sin Marca";
+                }else{
+                    $model->marca = $producto["marca"];
+                }
+                
+                if(empty($producto["talla"])){
+                    $model->talla = "Sin Talla";
+                }else{
+                    $model->talla = $producto["talla"];
+                }
+                
+                $model->nombre = $producto["nombre"];
+
+                try{
+                    if(!$model->save()){
+                        foreach($model->errors as $error){
+                            $er = new Error('99999', $model->idproducto, 'producto', $error[0]);
+                            $errores[] = $er;
+                        }
+                    }else{
+                        if($update){
+                            $connection=Yii::app()->db;
+                            $sql = "UPDATE `producto` SET producto.cantidad = (".$cantidad." -(select ifnull(sum(detalle_pedido.cantidad),0) from detalle_pedido inner join pedido ON detalle_pedido.pedido_idpedido=pedido.idpedido and pedido.estado_idestado IN (2,3) and detalle_pedido.producto_idproducto=".$idproducto.")) where producto.idproducto=".$idproducto.";";
+                            $command = $connection->createCommand($sql);
+                            $command->execute();
+                        }
+                        
+                    }
+                } catch (CDbException $e){
+                    $er = new Error($e->errorInfo[1], $model->idproducto, 'producto', $e->errorInfo[2]);
+                    $errores[] = $er;
+                } 
+            }
+            
+            return $errores;
         }
 }

@@ -19,6 +19,9 @@ class SiteController extends Controller
 			'page'=>array(
 				'class'=>'CViewAction',
 			),
+                        'SoapPedidosOnline'=>array(
+				'class'=>'CWebServiceAction',
+			),
 		);
 	}
 
@@ -28,7 +31,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new ContactForm;
+                $model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
@@ -147,4 +150,24 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        /**
+	 * @param string $productosJson
+	 * @return string
+	 * @soap
+	 */
+        public function productos($productosJson){
+            $result = '';
+            if(!empty($productosJson)){
+                $productos = CJSON::decode($productosJson, true);
+                if (is_null($productos)) {
+                    $result = "No es un objeto JSON";
+                }  else {
+                    $result = Producto::saveWeb($productos);  
+                } 
+            }else{
+                $result = "Datos enviado no deben estar vacios";
+            }
+            return CJSON::encode($result);
+        }
 }
