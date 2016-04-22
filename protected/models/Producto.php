@@ -234,7 +234,7 @@ class Producto extends CActiveRecord
                     }else{
                         if($update){
                             $connection=Yii::app()->db;
-                            $sql = "UPDATE `producto` SET producto.cantidad = (".$cantidad." -(select ifnull(sum(detalle_pedido.cantidad),0) from detalle_pedido inner join pedido ON detalle_pedido.pedido_idpedido=pedido.idpedido and pedido.estado_idestado IN (2,3) and detalle_pedido.producto_idproducto=".$idproducto.")) where producto.idproducto=".$idproducto.";";
+                            $sql = "UPDATE `producto` SET producto.talla = '".$model->talla."' producto.cantidad = (".$cantidad." -(select ifnull(sum(detalle_pedido.cantidad),0) from detalle_pedido inner join pedido ON detalle_pedido.pedido_idpedido=pedido.idpedido and pedido.estado_idestado IN (2,3) and detalle_pedido.producto_idproducto=".$idproducto.")) where producto.idproducto=".$idproducto.";";
                             $command = $connection->createCommand($sql);
                             $command->execute();
                         }
